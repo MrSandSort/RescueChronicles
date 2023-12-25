@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Flat Night 2 BG_0: 1205782749315591920
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

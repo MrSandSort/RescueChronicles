@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      TextBTN_Medium_Pressed_0: 5098352667919084846
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
