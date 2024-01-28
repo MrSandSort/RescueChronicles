@@ -1,31 +1,62 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-
-    public float moveSpeed = 5f;
+    public float x, y;
+    public float moveSpeed= 5f;
+    public bool isWalking;
     public Rigidbody2D rb;
-    Vector2 movement;
+    public Vector3 movedir;
     public Animator animator;
+
+    public void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
 
     void Update()
     {
-        //Input
-        movement.x= Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
-        
-        animator.SetFloat("Horizontal",movement.x);
-        animator.SetFloat("Vertical", movement.y);
-        animator.SetFloat("Speed",movement.sqrMagnitude);
+       
+        x= Input.GetAxisRaw("Horizontal");
+        y = Input.GetAxisRaw("Vertical");
 
+        if (x != 0 || y != 0)
+        {
+
+            animator.SetFloat("X", x);
+            animator.SetFloat("Y", y);
+
+            if (!isWalking)
+            {
+
+                isWalking = true;
+                animator.SetBool("IsWalking", isWalking);
+
+            }
+
+        }
+
+        else {
+
+            if (isWalking) {
+
+                isWalking = false;
+                animator.SetBool("IsWalking", isWalking);
+                StopMoving();
+            }
+        }
+
+        movedir = new Vector3(x, y).normalized;
+
+    }
+
+    void StopMoving() {
+        rb.velocity = Vector3.zero;
     }
 
     void FixedUpdate()
     {
-        // Movement
-        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+        rb.velocity = movedir * moveSpeed * Time.deltaTime;
 
     }
 }
