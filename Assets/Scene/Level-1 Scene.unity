@@ -20178,13 +20178,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fab31296cf3b1df4a84462a1c445dbbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  x: 0
-  y: 0
-  moveSpeed: 100
+  moveSpeed: 800
   isWalking: 0
   rb: {fileID: 0}
-  movedir: {x: 0, y: 0, z: 0}
   animator: {fileID: 2116872751}
+  isAttacking: 0
 --- !u!95 &2116872751
 Animator:
   serializedVersion: 7
