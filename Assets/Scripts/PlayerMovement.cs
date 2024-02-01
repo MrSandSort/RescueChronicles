@@ -18,8 +18,10 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = Vector3.zero;
     }
 
-    void Update()
+    private void Update()
     {
+        if (DialogManager.isActive == true)
+            return;
         HandleMovementInput();
         HandleAttackInput();
     }
