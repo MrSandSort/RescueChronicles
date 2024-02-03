@@ -5,10 +5,18 @@ using UnityEngine;
 public class Npc : MonoBehaviour
 {
     public DialogTrigger trigger;
-
+    public Rigidbody2D rb;
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player") == true)
+        if (collision.gameObject.CompareTag("Player") == true) {
             trigger.StartDialogue();
+        }
+           
     }
+
+    void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
+
 }

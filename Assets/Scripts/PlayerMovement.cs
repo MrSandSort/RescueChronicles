@@ -13,15 +13,20 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    void StopMoving()
+    public void StopMoving()
     {
         rb.velocity = Vector3.zero;
     }
 
+  
     private void Update()
     {
-        if (DialogManager.isActive == true)
-            return;
+        if (DialogManager.isActive == true) 
+        {
+            return; 
+        }
+  
+
         HandleMovementInput();
         HandleAttackInput();
     }
@@ -55,6 +60,7 @@ public class PlayerMovement : MonoBehaviour
 
             Vector3 movedir = new Vector3(x, y).normalized;
             rb.velocity = movedir * moveSpeed * Time.deltaTime;
+           
         }
         else
         {
@@ -62,6 +68,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    
     void HandleAttackInput()
     {
         if (Input.GetKeyDown(KeyCode.Space))
@@ -72,7 +79,7 @@ public class PlayerMovement : MonoBehaviour
         else if (Input.GetKeyUp(KeyCode.Space))
         {
             EndAttackAnimation();
-        }
+        }  
     }
 
     void EndAttackAnimation()

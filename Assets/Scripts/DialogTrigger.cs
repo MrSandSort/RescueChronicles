@@ -12,8 +12,6 @@ public class DialogTrigger : MonoBehaviour
         FindObjectOfType<DialogManager>().OpenDialogue(messages, actors);
     }
 }
-
-
 [System.Serializable]
 public class Message {
     public int actorId;
