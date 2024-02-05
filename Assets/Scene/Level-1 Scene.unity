@@ -1629,7 +1629,7 @@ GameObject:
   - component: {fileID: 336003103}
   m_Layer: 3
   m_Name: Box Tilemaps
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1870,7 +1870,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1949,7 +1949,7 @@ GameObject:
   - component: {fileID: 462317483}
   m_Layer: 3
   m_Name: River-Collider
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2459,7 +2459,7 @@ MonoBehaviour:
   m_Follow: {fileID: 2116872745}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 5
+    OrthographicSize: 10
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -15026,7 +15026,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: -3208309, guid: e6e779fbb30118d48abf39ecb37c2cbe, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -15047,8 +15047,8 @@ Transform:
   m_GameObject: {fileID: 777164084}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.94, y: 8.15, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 4.93, y: 8.87, z: 0}
+  m_LocalScale: {x: 0.9189515, y: 1.2534858, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -15087,16 +15087,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4445e36d7cc84b4438409926c7870733, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
-  checkRadius: 6
+  speed: 2
+  chaseRadius: 10
   attackRadius: 2
-  shouldRotate: 1
   WhatIsPlayer:
     serializedVersion: 2
     m_Bits: 128
   WhatIsTilemap:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 24
 --- !u!50 &777164089
 Rigidbody2D:
   serializedVersion: 4
@@ -15131,7 +15130,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 777164084}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -15158,7 +15157,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.00000047683716, y: 0.053109646}
+  m_Offset: {x: -0.026933044, y: -0.5331136}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -15168,7 +15167,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.3623762, y: 1.7124395}
+  m_Size: {x: 0.6681703, y: 0.4337728}
   m_EdgeRadius: 0
 --- !u!1 &869310018
 GameObject:
@@ -15184,7 +15183,7 @@ GameObject:
   - component: {fileID: 869310020}
   m_Layer: 3
   m_Name: Trees-tilemaps
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20653,8 +20652,8 @@ Transform:
   m_GameObject: {fileID: 1913897091}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.6784, y: -2.6, z: 0}
-  m_LocalScale: {x: 1.2304, y: 1.3076, z: 1}
+  m_LocalPosition: {x: 1.6317, y: -2.6, z: 0}
+  m_LocalScale: {x: 1.2420888, y: 1.3076, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 465374845}
@@ -20742,7 +20741,7 @@ TilemapRenderer:
   m_ChunkCullingBounds: {x: 1.25, y: 0.78125, z: 0}
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
-  m_SortOrder: 0
+  m_SortOrder: 1
   m_Mode: 0
   m_DetectChunkCullingBounds: 0
   m_MaskInteraction: 0
@@ -21264,9 +21263,9 @@ GameObject:
   - component: {fileID: 2144283987}
   - component: {fileID: 2144283986}
   - component: {fileID: 2144283988}
-  m_Layer: 3
+  m_Layer: 4
   m_Name: Water-Tilemaps
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

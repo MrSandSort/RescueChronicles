@@ -62,10 +62,7 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = movedir * moveSpeed * Time.deltaTime;
            
         }
-        else
-        {
-            StopMoving();  // Stop movement when attacking
-        }
+       
     }
 
     

@@ -1,16 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class EnemyAI : MonoBehaviour
 {
     public float speed;
-    public float checkRadius;
+    public float chaseRadius;
     public float attackRadius;
 
-    public bool shouldRotate;
     public LayerMask WhatIsPlayer;
-    public LayerMask WhatIsTilemap; // Add this line to specify the Tilemap layer
+    public LayerMask WhatIsTilemap;
 
     private Transform target;
     private Rigidbody2D rb;
@@ -20,7 +20,6 @@ public class EnemyAI : MonoBehaviour
 
     private bool isInChaseRange;
     private bool isInAttackRange;
-    private bool isCollidingWithTilemap; // New variable to track Tilemap collisions
 
     private void Start()
     {
@@ -31,35 +30,55 @@ public class EnemyAI : MonoBehaviour
 
     private void Update()
     {
-        anim.SetBool("IsMoving", isInChaseRange);
-        isInChaseRange = Physics2D.OverlapCircle(transform.position, checkRadius, WhatIsPlayer);
+        isInChaseRange = Physics2D.OverlapCircle(transform.position, chaseRadius, WhatIsPlayer);
         isInAttackRange = Physics2D.OverlapCircle(transform.position, attackRadius, WhatIsPlayer);
 
         dir = target.position - transform.position;
-        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         dir.Normalize();
         movement = dir;
 
-        if (shouldRotate)
+        if (isInChaseRange)
         {
-            anim.SetFloat("X", dir.x);
-            anim.SetFloat("Y", dir.y);
+            anim.SetBool("IsMoving", true);
+            anim.SetFloat("X", movement.x);
+            anim.SetFloat("Y", movement.y);
+        }
+        else
+        {
+            anim.SetBool("IsMoving", false);
         }
     }
 
     private void FixedUpdate()
     {
-        // Check for collisions with Tilemap
-        isCollidingWithTilemap = Physics2D.Raycast(transform.position, dir, checkRadius, WhatIsTilemap);
-
-        if (isInChaseRange && !isInAttackRange && !isCollidingWithTilemap)
+        if (isInChaseRange && !isInAttackRange)
         {
-            MoveCharacter(movement);
+            // Check for obstacles using raycast to detect Tilemap
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, dir, chaseRadius, WhatIsTilemap);
+
+            if (hit.collider == null)
+            {
+                // No Tilemap obstacle, continue chasing the player
+                MoveCharacter(movement);
+            }
+            else
+            {
+                // Adjust the movement direction to go around the Tilemap obstacle
+                Vector2 avoidanceDir = Vector2.Perpendicular(hit.normal).normalized;
+                movement = avoidanceDir;
+                MoveCharacter(movement);
+            }
         }
 
         if (isInAttackRange)
         {
             anim.SetBool("IsMoving", false);
+            anim.SetBool("IsAttacking", true);
+        }
+        else
+        {
+            anim.SetBool("IsMoving", true);
+            anim.SetBool("IsAttacking", false);
         }
     }
 
