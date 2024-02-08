@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Windows;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -8,20 +9,17 @@ public class PlayerMovement : MonoBehaviour
     public Animator animator;
     public bool isAttacking;
 
-    public float attackRate = 2f;
-    private float nextAttackTime = 0f;
-    private int attackCount = 0; // Track the number of attacks
-    private float holdDuration = 0.5f; // Duration for holding space bar before stopping attack animation
-    private float spacePressedTime = 0f; // Track the time when space bar is pressed
+    private Vector2 MoveDir;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     public void StopMoving()
     {
-        rb.velocity = Vector3.zero;
+        rb.velocity = Vector2.zero;
     }
 
     private void Update()
@@ -32,80 +30,36 @@ public class PlayerMovement : MonoBehaviour
         }
 
         HandleMovementInput();
-        HandleAttackInput();
+        Animate();
+    }
+
+    private void FixedUpdate()
+    {
+        Move();
     }
 
     void HandleMovementInput()
     {
-        if (!isAttacking) // Check if the player is not attacking
-        {
-            float x = Input.GetAxisRaw("Horizontal");
-            float y = Input.GetAxisRaw("Vertical");
+        float x = UnityEngine.Input.GetAxisRaw("Horizontal");
+        float y = UnityEngine.Input.GetAxisRaw("Vertical");
 
-            if (x != 0 || y != 0)
-            {
-                animator.SetFloat("X", x);
-                animator.SetFloat("Y", y);
-
-                if (!isWalking)
-                {
-                    isWalking = true;
-                    animator.SetBool("IsWalking", isWalking);
-                }
-            }
-            else
-            {
-                if (isWalking)
-                {
-                    isWalking = false;
-                    animator.SetBool("IsWalking", isWalking);
-                }
-            }
-
-            Vector3 movedir = new Vector3(x, y).normalized;
-            rb.velocity = movedir * moveSpeed * Time.deltaTime;
-        }
-        else
-        {
-            // Stop player movement while attacking
-            rb.velocity = Vector3.zero;
-            isWalking = false;
-            animator.SetBool("IsWalking", isWalking);
-        }
+        MoveDir = new Vector2(x, y).normalized;
     }
 
-    void HandleAttackInput()
+    void Move()
     {
-        if (Time.time >= nextAttackTime)
-        {
-            if (Input.GetKeyDown(KeyCode.Space)) // Check if there are fewer than 2 attacks
-            {
-                isAttacking = true;
-                animator.SetBool("IsAttacking", isAttacking);
-                nextAttackTime = Time.time + 1f / attackRate;
-                attackCount++; // Increment the attack count
-                spacePressedTime = Time.time; // Record the time when space bar is pressed
-            }
-            else if (attackCount >= 2 && Time.time >= nextAttackTime) // Reset attack count after cooldown period
-            {
-                attackCount = 0;
-            }
-        }
-        else if (Input.GetKeyUp(KeyCode.Space))
-        {
-            EndAttackAnimation();
-        }
+        rb.velocity = new Vector2(MoveDir.x * moveSpeed, MoveDir.y * moveSpeed);
 
-        // Check if the space bar has been held down for longer than holdDuration
-        if (isAttacking && Input.GetKey(KeyCode.Space) && Time.time >= spacePressedTime + holdDuration)
-        {
-            EndAttackAnimation();
-        }
+
+
+
     }
 
-    void EndAttackAnimation()
+
+    void Animate()
     {
-        isAttacking = false;
-        animator.SetBool("IsAttacking", isAttacking);
+        animator.SetFloat("X", MoveDir.x);
+        animator.SetFloat("Y", MoveDir.y);
+        animator.SetFloat("MoveMagnitude", MoveDir.magnitude);
     }
 }

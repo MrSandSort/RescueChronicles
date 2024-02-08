@@ -21,11 +21,16 @@ public class EnemyAI : MonoBehaviour
     private bool isInChaseRange;
     private bool isInAttackRange;
 
+    public int currentHealth;
+    public int maxHealth;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         target = GameObject.FindWithTag("Player").transform;
+
+        currentHealth = maxHealth;
     }
 
     private void Update()
@@ -72,8 +77,11 @@ public class EnemyAI : MonoBehaviour
 
         if (isInAttackRange)
         {
-            anim.SetBool("IsMoving", false);
-            anim.SetBool("IsAttacking", true);
+            if (!anim.GetBool("IsAttacking")) // Check if not already attacking
+            {
+
+                anim.SetBool("IsAttacking", true);
+            }
         }
         else
         {
@@ -86,4 +94,16 @@ public class EnemyAI : MonoBehaviour
     {
         rb.MovePosition((Vector2)transform.position + (dir * speed * Time.deltaTime));
     }
+
+    public void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+
+        if (currentHealth <= 0) {
+
+            Destroy(gameObject);
+        }
+    }
+
+
 }
