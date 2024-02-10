@@ -125,211 +125,148 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: spr_player_back_attack_0
+      name: Back_Attack_0
       rect:
         serializedVersion: 2
-        x: 79
-        y: 17
-        width: 37
-        height: 34
+        x: 0
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: d0ecc9734fa9cf9d0800000000000000
-      internalID: -2739144099652383219
+      spriteID: 6650d1e996749794eaa71cf990fe14ec
+      internalID: 291744696
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_player_back_attack_1
+      name: Back_Attack_1
       rect:
         serializedVersion: 2
-        x: 141
-        y: 30
-        width: 10
-        height: 19
+        x: 64
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: dd05da05d76151ff0800000000000000
-      internalID: -66121892046745379
+      spriteID: 8325768f350fa3d4d9cae70de4c0afcf
+      internalID: 321439396
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_player_back_attack_2
+      name: Back_Attack_2
       rect:
         serializedVersion: 2
-        x: 151
-        y: 46
-        width: 20
-        height: 6
+        x: 128
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 7e839ee46488f5970800000000000000
-      internalID: 8745858836929788135
+      spriteID: fa3ce4a6ba97e944ba26072dad6b3012
+      internalID: 652614909
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_player_back_attack_3
+      name: Back_Attack_3
       rect:
         serializedVersion: 2
-        x: 211
-        y: 18
-        width: 22
-        height: 34
+        x: 192
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: a15169be4b8c83b00800000000000000
-      internalID: 808616812485154074
+      spriteID: b266e11ca4552874e9a55908f81e7c42
+      internalID: 2068369340
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_player_back_attack_4
+      name: Back_Attack_4
       rect:
         serializedVersion: 2
-        x: 23
-        y: 12
-        width: 26
-        height: 29
+        x: 256
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 839f38200b40455e0800000000000000
-      internalID: -1921905986977400520
+      spriteID: 512b773d6ed2c2c4d8fa1381351a32ec
+      internalID: 125285405
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_player_back_attack_5
+      name: Back_Attack_5
       rect:
         serializedVersion: 2
-        x: 152
-        y: 18
-        width: 16
-        height: 25
+        x: 320
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: a4ecbb1d4993f0c40800000000000000
-      internalID: 5480662582869872202
+      spriteID: ae91a6a67dfe40f40b8b0e84e95265eb
+      internalID: -404861037
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_player_back_attack_6
+      name: Back_Attack_6
       rect:
         serializedVersion: 2
-        x: 205
-        y: 35
-        width: 4
-        height: 9
+        x: 384
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 58f6272a0d98d6ba0800000000000000
-      internalID: -6094063191590801531
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spr_player_back_attack_7
-      rect:
-        serializedVersion: 2
-        x: 269
-        y: 18
-        width: 26
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d766fc9a38bee6f90800000000000000
-      internalID: -6958365423518652803
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spr_player_back_attack_8
-      rect:
-        serializedVersion: 2
-        x: 344
-        y: 18
-        width: 15
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9914153838dfad530800000000000000
-      internalID: 3880692770218787225
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spr_player_back_attack_9
-      rect:
-        serializedVersion: 2
-        x: 408
-        y: 18
-        width: 15
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 101aba5e5855c4770800000000000000
-      internalID: 8596339822315675905
+      spriteID: f07eaec3d61db874b90c498bba5de452
+      internalID: -1322006974
       vertices: []
       indices: 
       edges: []
@@ -345,16 +282,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      spr_player_back_attack_0: -2739144099652383219
-      spr_player_back_attack_1: -66121892046745379
-      spr_player_back_attack_2: 8745858836929788135
-      spr_player_back_attack_3: 808616812485154074
-      spr_player_back_attack_4: -1921905986977400520
-      spr_player_back_attack_5: 5480662582869872202
-      spr_player_back_attack_6: -6094063191590801531
-      spr_player_back_attack_7: -6958365423518652803
-      spr_player_back_attack_8: 3880692770218787225
-      spr_player_back_attack_9: 8596339822315675905
+      Back_Attack_0: 291744696
+      Back_Attack_1: 321439396
+      Back_Attack_2: 652614909
+      Back_Attack_3: 2068369340
+      Back_Attack_4: 125285405
+      Back_Attack_5: -404861037
+      Back_Attack_6: -1322006974
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
