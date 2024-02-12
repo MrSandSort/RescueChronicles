@@ -5,7 +5,77 @@ using UnityEngine.Tilemaps;
 
 public class EnemyAI : MonoBehaviour
 {
-    public float speed;
+    private Animator anim;
+    private Transform target;
+    public Transform homePos;
+
+    [SerializeField]
+    private float speed;
+
+    [SerializeField]
+    private float maxRange;
+
+    [SerializeField]
+    private float minRange;
+
+    private void Start()
+    {
+        anim = GetComponent<Animator>();
+        target = GameObject.FindFirstObjectByType<PlayerMovement>().transform;
+    }
+
+    void Update()
+    {
+
+    float distanceToTarget = Vector3.Distance(target.position, transform.position);
+
+        if (distanceToTarget >= minRange && distanceToTarget <= maxRange)
+        {
+            FollowPlayer();
+        }
+        else if (distanceToTarget < minRange)
+        {
+            attack();
+        }
+        else if (distanceToTarget > maxRange)
+        {
+            getHome();
+        }
+
+       
+    }
+
+    private void FollowPlayer()
+    {
+        anim.SetBool("IsAttacking", false);
+        anim.SetBool("withInRange",true);
+        anim.SetFloat("X", target.position.x - transform.position.x);
+        anim.SetFloat("Y", target.position.y - transform.position.y);
+        transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed* Time.deltaTime);
+    }
+
+    private void getHome()
+    {
+        anim.SetFloat("X", homePos.position.x - transform.position.x);
+        anim.SetFloat("Y", homePos.position.y - transform.position.y);
+        transform.position = Vector3.MoveTowards(transform.position, homePos.position, speed* Time.deltaTime);
+
+        if (Vector3.Distance(transform.position, homePos.position) == 0) 
+        {
+            anim.SetBool("withInRange",false);
+        }
+    }
+
+    private void attack()
+    {
+        anim.SetBool("IsAttacking", true);
+        anim.SetFloat("X", target.position.x - transform.position.x);
+        anim.SetFloat("Y", target.position.y - transform.position.y);
+        transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
+    }
+
+
+    /*public float speed;
     public float chaseRadius;
     public float attackRadius;
 
@@ -23,6 +93,8 @@ public class EnemyAI : MonoBehaviour
 
     public int currentHealth;
     public int maxHealth;
+
+    public int damage;
 
     private void Start()
     {
@@ -97,13 +169,16 @@ public class EnemyAI : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        currentHealth -= damage;
+        MCHealthManager healthMan = GetComponent<MCHealthManager>();
+        healthMan.health -= damage;
 
-        if (currentHealth <= 0) {
+        if (healthMan.health <= 0) {
 
             Destroy(gameObject);
         }
     }
 
+
+}*/
 
 }
