@@ -1,0 +1,1087 @@
+fileFormatVersion: 2
+guid: 778d42f6f5575d24e829261f3d871889
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -637299848523329818
+    second: Left_Sprite_0
+  - first:
+      213: -6597315470878084359
+    second: Left_Sprite_1
+  - first:
+      213: -2428957774767214199
+    second: Left_Sprite_2
+  - first:
+      213: -8786639596487295365
+    second: Left_Sprite_3
+  - first:
+      213: 7354750317453056849
+    second: Left_Sprite_4
+  - first:
+      213: -2521049716336172249
+    second: Left_Sprite_5
+  - first:
+      213: -8321679925799928172
+    second: Left_Sprite_6
+  - first:
+      213: 1335193795900079271
+    second: Left_Sprite_7
+  - first:
+      213: -7579704921478155359
+    second: Left_Sprite_8
+  - first:
+      213: 7101433023263258307
+    second: Left_Sprite_9
+  - first:
+      213: 2083893022015148850
+    second: Left_Sprite_10
+  - first:
+      213: -7063629377742553382
+    second: Left_Sprite_11
+  - first:
+      213: 680283671551519778
+    second: Left_Sprite_12
+  - first:
+      213: -1846525727003866165
+    second: Left_Sprite_13
+  - first:
+      213: -2354675339344520372
+    second: Left_Sprite_14
+  - first:
+      213: -1239367088486684060
+    second: Left_Sprite_15
+  - first:
+      213: -7395663549945748372
+    second: Left_Sprite_16
+  - first:
+      213: 8682721738993117697
+    second: Left_Sprite_17
+  - first:
+      213: -9027881865861682170
+    second: Left_Sprite_18
+  - first:
+      213: 2856176297667768447
+    second: Left_Sprite_19
+  - first:
+      213: -8607462589116846847
+    second: Left_Sprite_20
+  - first:
+      213: -4154620214219386151
+    second: Left_Sprite_21
+  - first:
+      213: -734956818025477342
+    second: Left_Sprite_22
+  - first:
+      213: -6257241429692820673
+    second: Left_Sprite_23
+  - first:
+      213: 1736955749017110699
+    second: Left_Sprite_24
+  - first:
+      213: 1993473547019264935
+    second: Left_Sprite_25
+  - first:
+      213: -380410681877252643
+    second: Left_Sprite_26
+  - first:
+      213: -1172400410715661096
+    second: Left_Sprite_27
+  - first:
+      213: -8610374519571948474
+    second: Left_Sprite_28
+  - first:
+      213: 4118648539175319372
+    second: Left_Sprite_29
+  - first:
+      213: 54587113368885484
+    second: Left_Sprite_30
+  - first:
+      213: -5913978512493910366
+    second: Left_Sprite_31
+  - first:
+      213: 8567255707206803569
+    second: Left_Sprite_32
+  - first:
+      213: 596461421533945388
+    second: Left_Sprite_33
+  - first:
+      213: 1521125508917021255
+    second: Left_Sprite_34
+  - first:
+      213: 3077106218675181708
+    second: Left_Sprite_35
+  - first:
+      213: 6380731461383068573
+    second: Left_Sprite_36
+  - first:
+      213: -8717759559875148008
+    second: Left_Sprite_37
+  - first:
+      213: 8111255189034792931
+    second: Left_Sprite_38
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Left_Sprite_0
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 270
+        width: 17
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ee4b511a2bd727f0800000000000000
+      internalID: -637299848523329818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Left_Sprite_1
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 270
+        width: 17
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f27f178880a174a0800000000000000
+      internalID: -6597315470878084359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Left_Sprite_2
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 270
+        width: 17
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 981b394e5cb9a4ed0800000000000000
+      internalID: -2428957774767214199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Left_Sprite_3
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 270
+        width: 17
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7e3ef137d59f0680800000000000000
+      internalID: -8786639596487295365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Left_Sprite_4
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 270
+        width: 17
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15b1b735272511660800000000000000
+      internalID: 7354750317453056849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Left_Sprite_5
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 270
+        width: 17
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 723eeacd3ae630dd0800000000000000
+      internalID: -2521049716336172249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Left_Sprite_6
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 206
+        width: 20
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49e32389234738c80800000000000000
+      internalID: -8321679925799928172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Left_Sprite_7
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 206
+        width: 21
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7acfde6eeaf878210800000000000000
+      internalID: 1335193795900079271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Left_Sprite_8
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 206
+        width: 17
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a3b30d688a7fc690800000000000000
+      internalID: -7579704921478155359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Left_Sprite_9
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 206
+        width: 17
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c6b5dba5bb5d8260800000000000000
+      internalID: 7101433023263258307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Left_Sprite_10
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 206
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 233d02f99a97bec10800000000000000
+      internalID: 2083893022015148850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Left_Sprite_11
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 206
+        width: 17
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ade34a27182f8fd90800000000000000
+      internalID: -7063629377742553382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Left_Sprite_12
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 136
+        width: 28
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22ca35d156ad07900800000000000000
+      internalID: 680283671551519778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Left_Sprite_13
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 136
+        width: 28
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bcb805572a2df56e0800000000000000
+      internalID: -1846525727003866165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Left_Sprite_14
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 136
+        width: 28
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4b5ff42143825fd0800000000000000
+      internalID: -2354675339344520372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Left_Sprite_15
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 137
+        width: 25
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46ae0701332eccee0800000000000000
+      internalID: -1239367088486684060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Left_Sprite_16
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 142
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c64ed2b6f235d5990800000000000000
+      internalID: -7395663549945748372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Left_Sprite_17
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 142
+        width: 17
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10a2f382b693f7870800000000000000
+      internalID: 8682721738993117697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Left_Sprite_18
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 132
+        width: 14
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60caf17564586b280800000000000000
+      internalID: -9027881865861682170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Left_Sprite_19
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 131
+        width: 13
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f70b066c53d23a720800000000000000
+      internalID: 2856176297667768447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Left_Sprite_20
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 132
+        width: 14
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10de93621662c8880800000000000000
+      internalID: -8607462589116846847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Left_Sprite_21
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 78
+        width: 20
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d2dbc26de2d756c0800000000000000
+      internalID: -4154620214219386151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Left_Sprite_22
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 78
+        width: 34
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22b07500ba8ecc5f0800000000000000
+      internalID: -734956818025477342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Left_Sprite_23
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 78
+        width: 39
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f335d4d6210d929a0800000000000000
+      internalID: -6257241429692820673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Left_Sprite_24
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 78
+        width: 28
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba8ccba0d08ea1810800000000000000
+      internalID: 1736955749017110699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Left_Sprite_25
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 78
+        width: 18
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a3a83f01ad3aab10800000000000000
+      internalID: 1993473547019264935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Left_Sprite_26
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 78
+        width: 17
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd531f5108288baf0800000000000000
+      internalID: -380410681877252643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Left_Sprite_27
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 39
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8dc55c0c90ccabfe0800000000000000
+      internalID: -1172400410715661096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Left_Sprite_28
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 39
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64cd6d18efdc18880800000000000000
+      internalID: -8610374519571948474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Left_Sprite_29
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 39
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c47f93c5601682930800000000000000
+      internalID: 4118648539175319372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Left_Sprite_30
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 39
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce89aadb0bee1c000800000000000000
+      internalID: 54587113368885484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Left_Sprite_31
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 29
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a6e18160e35deda0800000000000000
+      internalID: -5913978512493910366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Left_Sprite_32
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 29
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 170eff7aca105e670800000000000000
+      internalID: 8567255707206803569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Left_Sprite_33
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 29
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2e51c0b08e074800800000000000000
+      internalID: 596461421533945388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Left_Sprite_34
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 29
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74ac8c1579f1c1510800000000000000
+      internalID: 1521125508917021255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Left_Sprite_35
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 22
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c88974c7dc314ba20800000000000000
+      internalID: 3077106218675181708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Left_Sprite_36
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 22
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9b95e22579ec8850800000000000000
+      internalID: 6380731461383068573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Left_Sprite_37
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 22
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81740647edb440780800000000000000
+      internalID: -8717759559875148008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Left_Sprite_38
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 22
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e776f08e97f09070800000000000000
+      internalID: 8111255189034792931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 13b9b219fca0be64d8d0724fc9968436
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Left_Sprite_0: -637299848523329818
+      Left_Sprite_1: -6597315470878084359
+      Left_Sprite_10: 2083893022015148850
+      Left_Sprite_11: -7063629377742553382
+      Left_Sprite_12: 680283671551519778
+      Left_Sprite_13: -1846525727003866165
+      Left_Sprite_14: -2354675339344520372
+      Left_Sprite_15: -1239367088486684060
+      Left_Sprite_16: -7395663549945748372
+      Left_Sprite_17: 8682721738993117697
+      Left_Sprite_18: -9027881865861682170
+      Left_Sprite_19: 2856176297667768447
+      Left_Sprite_2: -2428957774767214199
+      Left_Sprite_20: -8607462589116846847
+      Left_Sprite_21: -4154620214219386151
+      Left_Sprite_22: -734956818025477342
+      Left_Sprite_23: -6257241429692820673
+      Left_Sprite_24: 1736955749017110699
+      Left_Sprite_25: 1993473547019264935
+      Left_Sprite_26: -380410681877252643
+      Left_Sprite_27: -1172400410715661096
+      Left_Sprite_28: -8610374519571948474
+      Left_Sprite_29: 4118648539175319372
+      Left_Sprite_3: -8786639596487295365
+      Left_Sprite_30: 54587113368885484
+      Left_Sprite_31: -5913978512493910366
+      Left_Sprite_32: 8567255707206803569
+      Left_Sprite_33: 596461421533945388
+      Left_Sprite_34: 1521125508917021255
+      Left_Sprite_35: 3077106218675181708
+      Left_Sprite_36: 6380731461383068573
+      Left_Sprite_37: -8717759559875148008
+      Left_Sprite_38: 8111255189034792931
+      Left_Sprite_4: 7354750317453056849
+      Left_Sprite_5: -2521049716336172249
+      Left_Sprite_6: -8321679925799928172
+      Left_Sprite_7: 1335193795900079271
+      Left_Sprite_8: -7579704921478155359
+      Left_Sprite_9: 7101433023263258307
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

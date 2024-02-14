@@ -5,18 +5,19 @@ using UnityEngine.UI;
 
 public class MCHealthManager : MonoBehaviour
 {
-    public float health;
-    public float maxHealth;
+    private HealthManager healthMan;
     public Slider healthBar;
 
+    [System.Obsolete]
     void Start()
     {
-        maxHealth = health;
+        healthMan= FindObjectOfType<HealthManager>();
 
     }
     void Update()
     {
-        healthBar.value = Mathf.Clamp(health / maxHealth, 0, 1);
+        healthBar.maxValue = healthMan.maxhealth;
+        healthBar.value = healthMan.currentHealth;
 
     }
 }

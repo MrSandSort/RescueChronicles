@@ -69,7 +69,7 @@ public class DialogManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift)|| Input.GetKeyDown(KeyCode.RightShift) && isActive== true) 
+        if (Input.GetKeyDown(KeyCode.M) && isActive== true) 
         {
             NextMessages();
         

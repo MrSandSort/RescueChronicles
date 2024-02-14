@@ -27,7 +27,7 @@ public class EnemyAI : MonoBehaviour
     void Update()
     {
 
-    float distanceToTarget = Vector3.Distance(target.position, transform.position);
+        float distanceToTarget = Vector3.Distance(target.position, transform.position);
 
         if (distanceToTarget >= minRange && distanceToTarget <= maxRange)
         {
@@ -42,27 +42,27 @@ public class EnemyAI : MonoBehaviour
             getHome();
         }
 
-       
+
     }
 
     private void FollowPlayer()
     {
         anim.SetBool("IsAttacking", false);
-        anim.SetBool("withInRange",true);
+        anim.SetBool("withInRange", true);
         anim.SetFloat("X", target.position.x - transform.position.x);
         anim.SetFloat("Y", target.position.y - transform.position.y);
-        transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed* Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
     }
 
     private void getHome()
     {
         anim.SetFloat("X", homePos.position.x - transform.position.x);
         anim.SetFloat("Y", homePos.position.y - transform.position.y);
-        transform.position = Vector3.MoveTowards(transform.position, homePos.position, speed* Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, homePos.position, speed * Time.deltaTime);
 
-        if (Vector3.Distance(transform.position, homePos.position) == 0) 
+        if (Vector3.Distance(transform.position, homePos.position) == 0)
         {
-            anim.SetBool("withInRange",false);
+            anim.SetBool("withInRange", false);
         }
     }
 
@@ -74,6 +74,7 @@ public class EnemyAI : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
     }
 
+}
 
     /*public float speed;
     public float chaseRadius;
@@ -181,4 +182,3 @@ public class EnemyAI : MonoBehaviour
 
 }*/
 
-}
