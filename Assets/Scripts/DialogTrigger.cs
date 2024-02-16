@@ -9,7 +9,7 @@ public class DialogTrigger : MonoBehaviour
 
     public void StartDialogue()
     {
-        FindObjectOfType<DialogManager>().OpenDialogue(messages, actors);
+        Object.FindAnyObjectByType<DialogManager>().OpenDialogue(messages, actors);
     }
 }
 [System.Serializable]
