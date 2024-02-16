@@ -5,16 +5,24 @@ using UnityEngine;
 public class HurtPlayer : MonoBehaviour
 {
     public int damageTaken;
+    public bool isAttacking;
     void Start()
     {
 
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnTriggerEnter2D(Collider2D another)
     {
-        if (other.collider.tag == "Player")
+        if (another.CompareTag("Player"))
         {
-            other.gameObject.GetComponent<HealthManager>().damagePlayer(damageTaken);
+           HealthManager PlayerHealth;
+            PlayerHealth = another.gameObject.GetComponent<HealthManager>();
+            if (PlayerHealth!= null) {
+
+                PlayerHealth.damagePlayer(damageTaken);
+            }
         }
     }
+
+   
 }

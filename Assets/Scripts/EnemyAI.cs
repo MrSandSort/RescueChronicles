@@ -21,33 +21,30 @@ public class EnemyAI : MonoBehaviour
     private void Start()
     {
         anim = GetComponent<Animator>();
-        target = GameObject.FindFirstObjectByType<PlayerMovement>().transform;
+        target = GameObject.FindObjectOfType<PlayerMovement>().transform;
     }
 
     void Update()
     {
 
-        float distanceToTarget = Vector3.Distance(target.position, transform.position);
-
-        if (distanceToTarget >= minRange && distanceToTarget <= maxRange)
+        if (Vector3.Distance(target.position, transform.position) > minRange && Vector3.Distance(target.position, transform.position) < maxRange)
         {
             FollowPlayer();
+            NoAttack();
         }
-        else if (distanceToTarget < minRange)
+        else if (Vector3.Distance(target.position, transform.position) <= minRange)
         {
-            attack();
+            Attack();
         }
-        else if (distanceToTarget > maxRange)
+        else if (Vector3.Distance(target.position, transform.position) >= maxRange)
         {
             getHome();
         }
-
 
     }
 
     private void FollowPlayer()
     {
-        anim.SetBool("IsAttacking", false);
         anim.SetBool("withInRange", true);
         anim.SetFloat("X", target.position.x - transform.position.x);
         anim.SetFloat("Y", target.position.y - transform.position.y);
@@ -66,12 +63,21 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
-    private void attack()
+    private void Attack()
     {
         anim.SetBool("IsAttacking", true);
         anim.SetFloat("X", target.position.x - transform.position.x);
         anim.SetFloat("Y", target.position.y - transform.position.y);
         transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
+    }
+
+    private void NoAttack()
+    {
+
+        anim.SetBool("IsAttacking", false);
+        anim.SetFloat("X", (target.position.x - transform.position.x));
+        anim.SetFloat("Y", (target.position.y - transform.position.y));
+
     }
 
 }
