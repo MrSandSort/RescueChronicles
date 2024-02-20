@@ -9353,7 +9353,7 @@ MonoBehaviour:
   walkSpeed: 6
   airWalkSpeed: 5
   runSpeed: 9
-  jumpImpulse: 10
+  jumpImpulse: 12
   _isMoving: 0
   _isRunning: 0
 --- !u!50 &717441923
@@ -17717,35 +17717,15 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 656336038000391735, guid: 60dededd91b4f974abcef3961e608fa6, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 656336038000391735, guid: 60dededd91b4f974abcef3961e608fa6, type: 3}
-      propertyPath: m_ActionEvents.Array.size
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 656336038000391735, guid: 60dededd91b4f974abcef3961e608fa6, type: 3}
-      propertyPath: m_ActionEvents.Array.data[14].m_ActionId
-      value: 83a8c526-0917-4d55-a6ae-c7c4513baeac
-      objectReference: {fileID: 0}
-    - target: {fileID: 656336038000391735, guid: 60dededd91b4f974abcef3961e608fa6, type: 3}
-      propertyPath: m_ActionEvents.Array.data[14].m_ActionName
-      value: 'Player/Jump[/Keyboard/ctrl]'
-      objectReference: {fileID: 0}
-    - target: {fileID: 656336038000391735, guid: 60dededd91b4f974abcef3961e608fa6, type: 3}
-      propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 656336038000391735, guid: 60dededd91b4f974abcef3961e608fa6, type: 3}
       propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 656336038000391735, guid: 60dededd91b4f974abcef3961e608fa6, type: 3}
-      propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 656336038000391735, guid: 60dededd91b4f974abcef3961e608fa6, type: 3}
       propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 717441922}
+    - target: {fileID: 656336038000391735, guid: 60dededd91b4f974abcef3961e608fa6, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 717441922}
     - target: {fileID: 656336038000391735, guid: 60dededd91b4f974abcef3961e608fa6, type: 3}
@@ -17759,22 +17739,6 @@ PrefabInstance:
     - target: {fileID: 656336038000391735, guid: 60dededd91b4f974abcef3961e608fa6, type: 3}
       propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 656336038000391735, guid: 60dededd91b4f974abcef3961e608fa6, type: 3}
-      propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 656336038000391735, guid: 60dededd91b4f974abcef3961e608fa6, type: 3}
-      propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnJump
-      objectReference: {fileID: 0}
-    - target: {fileID: 656336038000391735, guid: 60dededd91b4f974abcef3961e608fa6, type: 3}
-      propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Platformer_PlayerController, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 656336038000391735, guid: 60dededd91b4f974abcef3961e608fa6, type: 3}
-      propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 691275675033656122, guid: 60dededd91b4f974abcef3961e608fa6, type: 3}
       propertyPath: m_Enabled
@@ -17848,7 +17812,8 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2647705423121579784, guid: 60dededd91b4f974abcef3961e608fa6, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
