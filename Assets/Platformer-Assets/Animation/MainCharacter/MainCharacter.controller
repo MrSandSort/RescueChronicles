@@ -496,8 +496,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boolName: canMove
-  updateOnStateMachine: 0
-  updateOnState: 1
+  updateOnStateMachine: 1
+  updateOnState: 0
   valueOnEnter: 0
   valueOnExit: 1
 --- !u!1101 &-387839476036235296
@@ -582,7 +582,7 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
-  - m_Name: New Bool
+  - m_Name: canMove
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0

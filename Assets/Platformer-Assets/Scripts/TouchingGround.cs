@@ -64,7 +64,7 @@ public class TouchingGround : MonoBehaviour
 
         set
         {
-            _isOnWall = value;
+            _isOnCeiling= value;
             animator.SetBool(AnimationStrings.isOnCeiling, value);
         }
     }
