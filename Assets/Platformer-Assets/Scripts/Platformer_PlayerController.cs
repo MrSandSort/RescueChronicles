@@ -105,9 +105,26 @@ public class Platformer_PlayerController : MonoBehaviour
         } 
     }
 
-    public bool CanMove { get {
+    public bool CanMove { get 
+        {
             return animator.GetBool(AnimationStrings.canMove);
         } 
+    }
+
+    public bool IsAlive { get 
+        {
+            return animator.GetBool(AnimationStrings.isAlive);
+        
+        } 
+    }
+
+    public bool LockVelocity
+    {
+        get
+        {
+            return animator.GetBool(AnimationStrings.lockVelocity);
+        }
+    
     }
 
     private void Awake()
@@ -116,27 +133,29 @@ public class Platformer_PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         touchingDirections = GetComponent<TouchingGround>();
     }
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
 
     private void FixedUpdate()
     {
-        rb.velocity = new Vector2(moveInput.x * CurrentMoveSpeed , rb.velocity.y);
+        if (!LockVelocity) 
+            
+            rb.velocity = new Vector2(moveInput.x * CurrentMoveSpeed, rb.velocity.y);
+       
         animator.SetFloat(AnimationStrings.yVelocity, rb.velocity.y);
     }
 
     public void OnMove(InputAction.CallbackContext context ) 
     {
         moveInput = context.ReadValue<Vector2>();
-        IsMoving = moveInput != Vector2.zero;
-        SetFacingDirection(moveInput);
+
+        if (IsAlive) 
+        {
+            IsMoving = moveInput != Vector2.zero;
+            SetFacingDirection(moveInput);
+        }
+        else 
+        {
+            IsMoving = false;
+        }
 
     }
 
@@ -181,5 +200,10 @@ public class Platformer_PlayerController : MonoBehaviour
             animator.SetTrigger(AnimationStrings.attack);
 
         }
+    }
+
+    public void OnHit(int damage, Vector2 knockBack) 
+    {
+        rb.velocity = new Vector2(knockBack.x, rb.velocity.y + knockBack.y);
     }
 }

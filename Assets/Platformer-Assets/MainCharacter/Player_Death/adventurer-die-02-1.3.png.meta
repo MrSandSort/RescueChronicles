@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: bf3de9f08aa25e94f82ea127b67c82c0
+guid: 1b9ad235d7c58bd40aab3640efb4fcb6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2071874375605805188
-    second: LightBandit_Death_0_0
+      213: -5683518550682573858
+    second: adventurer-die-02-1.3_0
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -98,13 +98,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: LightBandit_Death_0_0
+      name: adventurer-die-02-1.3_0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 1
-        width: 45
-        height: 10
+        x: 14
+        y: 0
+        width: 21
+        height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -112,8 +112,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c7f18ce8b393f33e0800000000000000
-      internalID: -2071874375605805188
+      spriteID: ed3e830adf51021b0800000000000000
+      internalID: -5683518550682573858
       vertices: []
       indices: 
       edges: []
@@ -129,7 +129,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      LightBandit_Death_0_0: -2071874375605805188
+      adventurer-die-02-1.3_0: -5683518550682573858
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

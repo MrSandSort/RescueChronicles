@@ -6,7 +6,12 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D), typeof(TouchingGround))]
 public class EnemyPlatform : MonoBehaviour
 {
-    public float walkSpeed= 3f;
+    public float walkSpeed = 3f;
+    public float walkStopRate = 0.05f;
+
+    public DetectArea attackArea;
+
+    Animator animator;
     Rigidbody2D rb;
 
     public enum WalkableDirection { Right, Left }
@@ -22,23 +27,41 @@ public class EnemyPlatform : MonoBehaviour
         }
         private set
         {
-            if (_walkDirection != value) 
+            if (_walkDirection != value)
             {
-                gameObject.transform.localScale = new Vector2 (gameObject.transform.localScale.x* -1, gameObject.transform.localScale.y);
+                gameObject.transform.localScale = new Vector2(gameObject.transform.localScale.x * -1, gameObject.transform.localScale.y);
 
                 if (value == WalkableDirection.Right)
                 {
                     walkDirectionVector = Vector2.right;
                 }
-                else if (value== WalkableDirection.Left) 
+                else if (value == WalkableDirection.Left)
                 {
                     walkDirectionVector = Vector2.left;
                 }
             }
 
-                _walkDirection = value; 
+            _walkDirection = value;
         }
     }
+
+    public bool _hasTarget = false;
+
+    public bool HasTarget
+    {
+        get
+
+        { return _hasTarget; }
+
+        private set
+        {
+
+            _hasTarget = value;
+            animator.SetBool(AnimationStrings.hasTarget, value);
+        }
+    }
+
+    public bool CanMove { get { return animator.GetBool(AnimationStrings.canMove); } }
 
     public Vector2 walkDirectionVector = Vector2.left;
 
@@ -46,15 +69,28 @@ public class EnemyPlatform : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         touchingDirection = GetComponent<TouchingGround>();
+        animator = GetComponent<Animator>();
     }
-
+    private void Update()
+    {
+        HasTarget = attackArea.detectColliders.Count > 0;
+    }
     private void FixedUpdate()
     {
         if (touchingDirection.IsGrounded && touchingDirection.IsOnWall) 
         {
             FlipDirection();
         }
-        rb.velocity = new Vector2(walkSpeed* walkDirectionVector.x, rb.velocity.y);
+
+        if (CanMove)
+        {
+            rb.velocity = new Vector2(walkSpeed * walkDirectionVector.x, rb.velocity.y);
+        }
+        else 
+        {
+            rb.velocity = new Vector2(Mathf.Lerp(rb.velocity.x,0, walkStopRate), rb.velocity.y);
+        }
+        
 
     }
 
@@ -75,13 +111,5 @@ public class EnemyPlatform : MonoBehaviour
       }
     }
 
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
+ 
 }

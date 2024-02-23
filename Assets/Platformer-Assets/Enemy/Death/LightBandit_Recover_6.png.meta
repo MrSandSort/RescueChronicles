@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 1602ce7d7220b8c4b99b379ffe747f20
+guid: 170caa468fd80194b81abfcbe459922a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4117066118537240100
-    second: adventurer-hurt-02-1.3_0
+      213: -416182809299440529
+    second: LightBandit_Recover_6_0
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -98,13 +98,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: adventurer-hurt-02-1.3_0
+      name: LightBandit_Recover_6_0
       rect:
         serializedVersion: 2
-        x: 14
-        y: 0
-        width: 21
-        height: 26
+        x: 10
+        y: 1
+        width: 28
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -112,8 +112,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cd1aac7ad2e3dd6c0800000000000000
-      internalID: -4117066118537240100
+      spriteID: f6c2512a0fb693af0800000000000000
+      internalID: -416182809299440529
       vertices: []
       indices: 
       edges: []
@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      LightBandit_Recover_6_0: -416182809299440529
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

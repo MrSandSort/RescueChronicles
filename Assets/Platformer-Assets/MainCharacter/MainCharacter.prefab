@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 1391177900851985475}
   - component: {fileID: 1940363304835388450}
   - component: {fileID: 2647705423121579784}
+  - component: {fileID: 4683934466390805083}
   m_Layer: 7
   m_Name: MainCharacter
   m_TagString: Untagged
@@ -280,12 +281,12 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.05933519, y: 0.10366283}
-  m_Size: {x: 0.6997831, y: 1.8496493}
+  m_Offset: {x: 0.10188138, y: 0.09079504}
+  m_Size: {x: 0.7177785, y: 1.875385}
   m_Direction: 0
 --- !u!114 &1391177900851985475
 MonoBehaviour:
@@ -364,3 +365,35 @@ MonoBehaviour:
   jumpImpulse: 10
   _isMoving: 0
   _isRunning: 0
+--- !u!114 &4683934466390805083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5146654988683903064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05268c08b55255141a9e04f259de71bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damagableHit:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2647705423121579784}
+        m_TargetAssemblyTypeName: Platformer_PlayerController, Assembly-CSharp
+        m_MethodName: OnHit
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  isInv: 0
+  invTimer: 0.25
+  _maxHealth: 100
+  _health: 100
+  _isAlive: 1

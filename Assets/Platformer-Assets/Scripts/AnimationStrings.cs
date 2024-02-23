@@ -13,5 +13,8 @@ internal class AnimationStrings
     internal static string isOnCeiling="isOnCeiling";
     internal static string attack="attack";
     internal static string canMove = "canMove";
-    internal static string hasTarget="hasTarget";
+    internal static string hasTarget= "hasTarget";
+    internal static string isAlive= "isAlive";
+    internal static string lockVelocity="lockVelocity";
+    internal static string hit="hit";
 }
