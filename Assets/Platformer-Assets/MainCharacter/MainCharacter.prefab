@@ -345,7 +345,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
   m_Constraints: 4
 --- !u!114 &2647705423121579784
 MonoBehaviour:
@@ -392,8 +392,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  isInv: 0
-  invTimer: 0.25
+  isInv: 1
+  invTimer: 0.5
   _maxHealth: 100
   _health: 100
   _isAlive: 1

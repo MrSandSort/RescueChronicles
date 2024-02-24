@@ -4875,7 +4875,7 @@ Transform:
   m_GameObject: {fileID: 165989055}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.8, y: -16.9, z: 0}
+  m_LocalPosition: {x: 0.41, y: -16.94, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -17851,22 +17851,6 @@ PrefabInstance:
       propertyPath: detectColliders.Array.size
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6513208338138896101, guid: 7f93de28d2cbf3c4cbab244c1421ccdd, type: 3}
-      propertyPath: m_Size.x
-      value: 1.2164195
-      objectReference: {fileID: 0}
-    - target: {fileID: 6513208338138896101, guid: 7f93de28d2cbf3c4cbab244c1421ccdd, type: 3}
-      propertyPath: m_Size.y
-      value: 1.4904375
-      objectReference: {fileID: 0}
-    - target: {fileID: 6513208338138896101, guid: 7f93de28d2cbf3c4cbab244c1421ccdd, type: 3}
-      propertyPath: m_Offset.x
-      value: 0.747679
-      objectReference: {fileID: 0}
-    - target: {fileID: 6513208338138896101, guid: 7f93de28d2cbf3c4cbab244c1421ccdd, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.12921572
-      objectReference: {fileID: 0}
     - target: {fileID: 6793843136695348413, guid: 7f93de28d2cbf3c4cbab244c1421ccdd, type: 3}
       propertyPath: m_CollisionDetection
       value: 0
@@ -18041,6 +18025,14 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4683934466390805083, guid: 60dededd91b4f974abcef3961e608fa6, type: 3}
+      propertyPath: invTimer
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4683934466390805083, guid: 60dededd91b4f974abcef3961e608fa6, type: 3}
+      propertyPath: damagableHit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 717441922}
     - target: {fileID: 5146654988683903064, guid: 60dededd91b4f974abcef3961e608fa6, type: 3}
       propertyPath: m_Name
       value: MainCharacter

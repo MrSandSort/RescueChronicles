@@ -124,6 +124,11 @@ public class Platformer_PlayerController : MonoBehaviour
         {
             return animator.GetBool(AnimationStrings.lockVelocity);
         }
+        set 
+        {
+            animator.SetBool(AnimationStrings.lockVelocity, value);
+        
+        }
     
     }
 
@@ -137,7 +142,6 @@ public class Platformer_PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         if (!LockVelocity) 
-            
             rb.velocity = new Vector2(moveInput.x * CurrentMoveSpeed, rb.velocity.y);
        
         animator.SetFloat(AnimationStrings.yVelocity, rb.velocity.y);
@@ -198,12 +202,13 @@ public class Platformer_PlayerController : MonoBehaviour
         if (context.started)
         {
             animator.SetTrigger(AnimationStrings.attack);
-
         }
     }
 
-    public void OnHit(int damage, Vector2 knockBack) 
+    public void OnHit(int damage, Vector2 knockback)
     {
-        rb.velocity = new Vector2(knockBack.x, rb.velocity.y + knockBack.y);
+        LockVelocity = true;
+        rb.velocity = new Vector2(knockback.x, rb.velocity.y + knockback.y);
+        
     }
 }

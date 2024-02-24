@@ -86,7 +86,7 @@ public class Damageable : MonoBehaviour
             sinceHit += Time.deltaTime;
         }
     }
-    public bool Hit(int damage, Vector2 knockBack) 
+    public bool Hit(int damage, Vector2 knockback) 
     {
     
         if(IsAlive && !isInv) 
@@ -96,7 +96,7 @@ public class Damageable : MonoBehaviour
             isInv = true;
 
             animator.SetTrigger(AnimationStrings.hit);
-            damagableHit ?.Invoke(damage, knockBack);
+            damagableHit?.Invoke(damage, knockback);
 
             return true;
         }
