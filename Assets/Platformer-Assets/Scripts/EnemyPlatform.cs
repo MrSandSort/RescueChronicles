@@ -3,15 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D), typeof(TouchingGround))]
+[RequireComponent(typeof(Rigidbody2D), typeof(TouchingGround), typeof(Damageable))]
 public class EnemyPlatform : MonoBehaviour
 {
     public float walkSpeed = 3f;
     public float walkStopRate = 0.05f;
 
     public DetectArea attackArea;
+    public DetectArea cliffDetectionArea;
 
     Animator animator;
+    Damageable damageable;
     Rigidbody2D rb;
 
     public enum WalkableDirection { Right, Left }
@@ -63,6 +65,19 @@ public class EnemyPlatform : MonoBehaviour
 
     public bool CanMove { get { return animator.GetBool(AnimationStrings.canMove); } }
 
+    public float AttackCooldown
+    {
+        get
+        {
+            return animator.GetFloat(AnimationStrings.attackCooldown);
+        }
+        private set 
+        {
+
+            animator.SetFloat(AnimationStrings.attackCooldown, Mathf.Max(value,0));
+        }
+    }
+
     public Vector2 walkDirectionVector = Vector2.left;
 
     private void Awake()
@@ -70,10 +85,17 @@ public class EnemyPlatform : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         touchingDirection = GetComponent<TouchingGround>();
         animator = GetComponent<Animator>();
+        damageable = GetComponent<Damageable>();
     }
     private void Update()
     {
         HasTarget = attackArea.detectColliders.Count > 0;
+
+        if (AttackCooldown>0) 
+        {
+            AttackCooldown -= Time.deltaTime;
+        }
+       
     }
     private void FixedUpdate()
     {
@@ -82,15 +104,19 @@ public class EnemyPlatform : MonoBehaviour
             FlipDirection();
         }
 
-        if (CanMove)
+        if (!damageable.LockVelocity)
         {
-            rb.velocity = new Vector2(walkSpeed * walkDirectionVector.x, rb.velocity.y);
+            if (CanMove)
+            {
+                rb.velocity = new Vector2(walkSpeed * walkDirectionVector.x, rb.velocity.y);
+            }
+            else
+            {
+                rb.velocity = new Vector2(Mathf.Lerp(rb.velocity.x, 0, walkStopRate), rb.velocity.y);
+            }
+
         }
-        else 
-        {
-            rb.velocity = new Vector2(Mathf.Lerp(rb.velocity.x,0, walkStopRate), rb.velocity.y);
-        }
-        
+
 
     }
 
@@ -111,5 +137,19 @@ public class EnemyPlatform : MonoBehaviour
       }
     }
 
- 
+    public void OnHit(int damage, Vector2 knockback)
+    { 
+        rb.velocity = new Vector2(knockback.x, rb.velocity.y + knockback.y);
+
+    }
+
+    public void OnCliffDetection() 
+    {
+
+        if (touchingDirection.IsGrounded) 
+        {
+            FlipDirection();
+        }
+    }
+
 }

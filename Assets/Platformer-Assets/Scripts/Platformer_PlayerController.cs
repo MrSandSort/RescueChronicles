@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(Rigidbody2D), typeof(TouchingGround))]
+[RequireComponent(typeof(Rigidbody2D), typeof(TouchingGround), typeof(Damageable))]
 public class Platformer_PlayerController : MonoBehaviour
 {
     Vector2 moveInput;
@@ -50,6 +50,7 @@ public class Platformer_PlayerController : MonoBehaviour
        
 
     TouchingGround touchingDirections;
+    Damageable damageable;
     Rigidbody2D rb;
 
     Animator animator;
@@ -118,30 +119,18 @@ public class Platformer_PlayerController : MonoBehaviour
         } 
     }
 
-    public bool LockVelocity
-    {
-        get
-        {
-            return animator.GetBool(AnimationStrings.lockVelocity);
-        }
-        set 
-        {
-            animator.SetBool(AnimationStrings.lockVelocity, value);
-        
-        }
-    
-    }
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         touchingDirections = GetComponent<TouchingGround>();
+        damageable = GetComponent<Damageable>();
     }
 
     private void FixedUpdate()
     {
-        if (!LockVelocity) 
+        if (!damageable.LockVelocity) 
             rb.velocity = new Vector2(moveInput.x * CurrentMoveSpeed, rb.velocity.y);
        
         animator.SetFloat(AnimationStrings.yVelocity, rb.velocity.y);
@@ -207,7 +196,6 @@ public class Platformer_PlayerController : MonoBehaviour
 
     public void OnHit(int damage, Vector2 knockback)
     {
-        LockVelocity = true;
         rb.velocity = new Vector2(knockback.x, rb.velocity.y + knockback.y);
         
     }

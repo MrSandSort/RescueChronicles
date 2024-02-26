@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class DetectArea : MonoBehaviour
 {
+    public UnityEvent noCollider;
     public List<Collider2D> detectColliders = new List<Collider2D>();
 
     Collider2D col;
@@ -21,6 +22,11 @@ public class DetectArea : MonoBehaviour
     private void OnTriggerExit2D(Collider2D another)
     {
         detectColliders.Remove(another);
+
+        if (detectColliders.Count <= 0) 
+        {
+            noCollider.Invoke();
+        }
     }
     void Start()
     {
