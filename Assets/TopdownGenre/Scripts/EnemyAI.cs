@@ -18,6 +18,7 @@ public class EnemyAI : MonoBehaviour
     [SerializeField]
     private float minRange;
 
+    [System.Obsolete]
     private void Start()
     {
         anim = GetComponent<Animator>();
