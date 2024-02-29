@@ -29,14 +29,11 @@ public class PlayerMovement : MonoBehaviour
         float horizontalInput = Input.GetAxisRaw("Horizontal");
         float verticalInput = Input.GetAxisRaw("Vertical");
 
-        // Set velocity based on input
         rb.velocity = new Vector2(horizontalInput, verticalInput) * speed * Time.deltaTime;
 
-        // Set animator parameters for movement
         animator.SetFloat("X", rb.velocity.x);
         animator.SetFloat("Y", rb.velocity.y);
 
-        // Set animator parameters for last movement direction
         if (horizontalInput == 1 || horizontalInput == -1 || verticalInput == -1 || verticalInput == 1)
         {
             animator.SetFloat("lastX", horizontalInput);
@@ -49,21 +46,34 @@ public class PlayerMovement : MonoBehaviour
 
             if (attackCounter <= 0)
             {
-                // Reset attack animation
                 animator.SetBool("IsAttacking", false);
                 isAttacking = false;
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && !isAttacking)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && !isAttacking)
         {
             attackCounter = attackTime;
-            // Trigger attack animation
             animator.SetBool("IsAttacking", true);
             isAttacking = true;
         }
 
     }
+
+    private void OnTriggerEnter2D(Collider2D playerKnockBack)
+    {
+        if (playerKnockBack.tag == "EnemyWeapon")
+        {
+            Vector2 difference = transform.position - playerKnockBack.transform.position;
+            float knockbackFraction = 0.5f;
+            transform.position = new Vector2(transform.position.x + difference.x * knockbackFraction,
+                                             transform.position.y + difference.y * knockbackFraction);
+        }
+    }
+
+
+
+
 
 
     /*    void HandleAttackInput()

@@ -26,6 +26,13 @@ public class DialogManager : MonoBehaviour
 
     }
 
+    public void CloseDialogue()
+    {
+        isActive = false;
+        backgroundBox.LeanScale(Vector3.zero, 0.5f).setEaseInOutExpo();
+    }
+
+
     void DisplayMessages() {
 
         Message messageToDisplay = currentMessages[activeMessage];
@@ -54,6 +61,7 @@ public class DialogManager : MonoBehaviour
 
         }
     }
+
 
     void AnimateTextColor() {
         LeanTween.textAlpha(messageText.rectTransform,0,0);

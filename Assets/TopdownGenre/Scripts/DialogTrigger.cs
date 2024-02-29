@@ -11,6 +11,11 @@ public class DialogTrigger : MonoBehaviour
     {
         Object.FindAnyObjectByType<DialogManager>().OpenDialogue(messages, actors);
     }
+
+    public void EndDialogue() 
+    {
+        Object.FindAnyObjectByType<DialogManager>().CloseDialogue();
+    }
 }
 [System.Serializable]
 public class Message {

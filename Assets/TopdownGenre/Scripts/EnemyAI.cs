@@ -81,6 +81,16 @@ public class EnemyAI : MonoBehaviour
 
     }
 
+    private void OnTriggerEnter2D(Collider2D knockback)
+    {
+        if (knockback.tag== "Weapon") 
+        {
+            Vector2 difference = transform.position - knockback.transform.position;
+            transform.position = new Vector2(transform.position.x + difference.x, transform.position.y+ difference.y);
+        }
+        
+    }
+
 }
 
     /*public float speed;

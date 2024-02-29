@@ -7,6 +7,8 @@ TagManager:
   - VillagerNpc
   - Obstacle
   - Enemy
+  - Weapon
+  - EnemyWeapon
   layers:
   - Default
   - TransparentFX

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Npc : MonoBehaviour
@@ -13,12 +14,12 @@ public class Npc : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player") == true) {
+        if (collision.gameObject.tag == "Player")
+        {
             trigger.StartDialogue();
         }
-           
+
     }
 
-    
 
 }
