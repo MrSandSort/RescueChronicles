@@ -21,11 +21,6 @@ public class HealthText : MonoBehaviour
         Tmp = GetComponent<TextMeshProUGUI>();
         sColor = Tmp.color;
     }
-    private void Start()
-    {
-        
-    }
-
     private void Update()
     {
         transformText.position += moveSpeed * Time.deltaTime;

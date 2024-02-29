@@ -120,5 +120,21 @@ public class Damageable : MonoBehaviour
         
         return false;
     }
+
+    public bool Heal(int healHealth) 
+    {
+        if (IsAlive && Health < MaxHealth ) 
+        {
+            int maxHeal = Mathf.Max(MaxHealth- Health,0);
+            int actualHeal = Mathf.Min(maxHeal,healHealth);
+            Health += actualHeal;
+            CharacterEvents.characterHealed(gameObject, actualHeal);
+
+            return true;
+        }
+        return false;
+    
+
+    }
   
 }
