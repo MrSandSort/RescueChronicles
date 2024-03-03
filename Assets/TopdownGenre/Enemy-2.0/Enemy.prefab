@@ -173,6 +173,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 100
   maxhealth: 100
+  rb: {fileID: 5148244811250094603}
+  force: 100
+  enemyAI: {fileID: 472023367292677656}
+  popUpDamagePrefab: {fileID: 6642616540492731537, guid: af87631cced5d4f4caff5f4ac8005712, type: 3}
+  Text: {fileID: 5817547838085562978, guid: af87631cced5d4f4caff5f4ac8005712, type: 3}
   flashTime: 0.1
 --- !u!114 &5668664872159009089
 MonoBehaviour:

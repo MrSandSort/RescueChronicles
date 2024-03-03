@@ -2,12 +2,13 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private Rigidbody2D rb;
+    private Rigidbody2D playerRb;
 
     [SerializeField]
     public float speed;
 
     private Animator animator;
+
     private float attackTime = 0.25f;
     private float attackCounter = 0.25f;
     private bool isAttacking;
@@ -15,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
    
     private void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        playerRb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
     }
 
@@ -29,10 +30,10 @@ public class PlayerMovement : MonoBehaviour
         float horizontalInput = Input.GetAxisRaw("Horizontal");
         float verticalInput = Input.GetAxisRaw("Vertical");
 
-        rb.velocity = new Vector2(horizontalInput, verticalInput) * speed * Time.deltaTime;
+        playerRb.velocity = new Vector2(horizontalInput, verticalInput) * speed * Time.deltaTime;
 
-        animator.SetFloat("X", rb.velocity.x);
-        animator.SetFloat("Y", rb.velocity.y);
+        animator.SetFloat("X", playerRb.velocity.x);
+        animator.SetFloat("Y", playerRb.velocity.y);
 
         if (horizontalInput == 1 || horizontalInput == -1 || verticalInput == -1 || verticalInput == 1)
         {
@@ -66,8 +67,7 @@ public class PlayerMovement : MonoBehaviour
         {
             Vector2 difference = transform.position - playerKnockBack.transform.position;
             float knockbackFraction = 0.5f;
-            transform.position = new Vector2(transform.position.x + difference.x * knockbackFraction,
-                                             transform.position.y + difference.y * knockbackFraction);
+            transform.position = new Vector2(transform.position.x + difference.x * knockbackFraction, transform.position.y + difference.y * knockbackFraction);
         }
     }
 
@@ -121,7 +121,7 @@ public class PlayerMovement : MonoBehaviour
 
 /* public float moveSpeed;
  public bool isWalking;
- public Rigidbody2D rb;
+ public Rigidbody2D playerRb;
  public Animator animator;
 
  private Vector2 MoveDir;
@@ -135,13 +135,13 @@ public class PlayerMovement : MonoBehaviour
 
  void Start()
  {
-     rb = GetComponent<Rigidbody2D>();
+     playerRb = GetComponent<Rigidbody2D>();
      animator = GetComponent<Animator>();
  }
 
  public void StopMoving()
  {
-     rb.velocity = Vector2.zero;
+     playerRb.velocity = Vector2.zero;
  }
 
  private void Update()
@@ -187,7 +187,7 @@ public class PlayerMovement : MonoBehaviour
 
  void Move()
  {
-     rb.velocity = new Vector2(MoveDir.x * moveSpeed, MoveDir.y * moveSpeed);
+     playerRb.velocity = new Vector2(MoveDir.x * moveSpeed, MoveDir.y * moveSpeed);
 
  }
 

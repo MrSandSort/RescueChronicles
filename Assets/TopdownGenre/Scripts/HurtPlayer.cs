@@ -6,10 +6,6 @@ public class HurtPlayer : MonoBehaviour
 {
     public int damageTaken;
     public bool isAttacking;
-    void Start()
-    {
-
-    }
 
     private void OnTriggerEnter2D(Collider2D another)
     {

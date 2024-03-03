@@ -1,11 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class EnemyDealDamage : MonoBehaviour
 {
     public int currentHealth;
     public int maxhealth;
+
+    [SerializeField]
+    private Rigidbody2D rb;
+
+    [SerializeField]
+    private float force;
+
+    private Transform playerMain;
+
+    [SerializeField]
+    private Transform enemyAI;
+
+    [SerializeField]
+    public GameObject popUpDamagePrefab;
 
     private bool hurtFlash;
 
@@ -17,10 +32,16 @@ public class EnemyDealDamage : MonoBehaviour
 
     // Color for the hurt flash (red)
     private Color hurtColor = new Color(1f, 0f, 0f);
+    private float moveDelay=0.25f;
 
+    [System.Obsolete]
     private void Start()
     {
         spriteEnemy = GetComponent<SpriteRenderer>();
+        rb = GetComponent<Rigidbody2D>();
+        playerMain = FindObjectOfType<PlayerMovement>().transform;
+        enemyAI = GetComponent<Transform>();
+        
     }
 
     private void Update()
@@ -70,15 +91,43 @@ public class EnemyDealDamage : MonoBehaviour
         spriteEnemy.color = newColor;
     }
 
+    IEnumerator knockBackDelay(int damage) 
+    {
+        yield return new WaitForSeconds(moveDelay);
+        rb.velocity = Vector2.zero;
+
+        if (rb.velocity == Vector2.zero) 
+        {
+            showDamage(damage.ToString());
+        
+        }
+
+    }
+
     public void DamageEnemy(int damageTaken)
     {
         currentHealth -= damageTaken;
         hurtFlash = true;
         flashTimer = flashTime;
 
+        Vector2 distance = (enemyAI.transform.position - playerMain.transform.position).normalized;
+        rb.AddForce(distance * force, ForceMode2D.Impulse);
+
+        StartCoroutine(knockBackDelay(damageTaken));
+
         if (currentHealth <= 0)
         {
             gameObject.SetActive(false);
         }
+    }
+
+    void showDamage(string text) 
+    {
+        if (popUpDamagePrefab) 
+        {
+            GameObject prefab = Instantiate(popUpDamagePrefab,transform.position,Quaternion.identity);
+            prefab.GetComponentInChildren<TextMesh>().text = text;
+        }
+    
     }
 }

@@ -8,20 +8,39 @@ public class HealthManager : MonoBehaviour
     public int maxhealth;
     private EnemyAI enemy;
 
+    [SerializeField]
+    private Rigidbody2D rb;
+
+    [SerializeField]
+    private float force;
+
+    private Transform playerMain;
+
+    [SerializeField]
+    private Transform enemyAI;
+
+    [SerializeField]
+    public GameObject popUpDamagePrefab;
+
     private bool hurtFlash;
 
     [SerializeField]
     private float flashTime = 0f;
     private float flashCountDown = 0f;
 
-    private SpriteRenderer enemySprite;
 
     // Color for the hurt flash (red)
     private Color hurtColor = new Color(1f, 0f, 0f);
+    private SpriteRenderer playerSprite;
+    private float moveDelay= 0.25f;
 
+    [System.Obsolete]
     private void Start()
     {
-        enemySprite = GetComponent<SpriteRenderer>();
+        playerSprite = GetComponent<SpriteRenderer>();
+        rb = GetComponent<Rigidbody2D>();
+        playerMain = FindObjectOfType<PlayerMovement>().transform;
+        enemyAI = GetComponent<Transform>();
     }
 
     private void Update()
@@ -60,15 +79,37 @@ public class HealthManager : MonoBehaviour
     // Method to set sprite color
     private void SetSpriteColor(Color color)
     {
-        enemySprite.color = color;
+        playerSprite.color = color;
     }
 
     // Method to set sprite alpha
     private void SetSpriteAlpha(float alpha)
     {
-        Color newColor = enemySprite.color;
+        Color newColor = playerSprite.color;
         newColor.a = alpha;
-        enemySprite.color = newColor;
+        playerSprite.color = newColor;
+    }
+
+    IEnumerator knockBackDelay(int damage)
+    {
+        yield return new WaitForSeconds(moveDelay);
+        rb.velocity = Vector2.zero;
+
+        if (rb.velocity == Vector2.zero)
+        {
+            showDamage(damage.ToString());
+
+        }
+
+    }
+    void showDamage(string text)
+    {
+        if (popUpDamagePrefab)
+        {
+            GameObject prefab = Instantiate(popUpDamagePrefab, transform.position, Quaternion.identity);
+            prefab.GetComponentInChildren<TextMesh>().text = text;
+        }
+
     }
 
     public void damagePlayer(int damageTaken)
@@ -76,6 +117,12 @@ public class HealthManager : MonoBehaviour
         currentHealth -= damageTaken;
         hurtFlash = true;
         flashCountDown = flashTime;
+
+        Vector2 distance = (enemyAI.transform.position - playerMain.transform.position).normalized;
+        rb.AddForce(distance * force, ForceMode2D.Impulse);
+
+        StartCoroutine(knockBackDelay(damageTaken));
+
 
         if (currentHealth <= 0)
         {
