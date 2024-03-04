@@ -12,7 +12,8 @@ public class HurtPlayer : MonoBehaviour
         if (another.CompareTag("Player"))
         {
            HealthManager PlayerHealth;
-            PlayerHealth = another.gameObject.GetComponent<HealthManager>();
+           PlayerHealth = another.gameObject.GetComponent<HealthManager>();
+
             if (PlayerHealth!= null) {
 
                 PlayerHealth.damagePlayer(damageTaken);

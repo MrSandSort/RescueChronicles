@@ -14,10 +14,10 @@ public class HealthManager : MonoBehaviour
     [SerializeField]
     private float force;
 
-    private Transform playerMain;
+    private Transform send;
 
     [SerializeField]
-    private Transform enemyAI;
+    private Transform receive;
 
     [SerializeField]
     public GameObject popUpDamagePrefab;
@@ -32,15 +32,15 @@ public class HealthManager : MonoBehaviour
     // Color for the hurt flash (red)
     private Color hurtColor = new Color(1f, 0f, 0f);
     private SpriteRenderer playerSprite;
-    private float moveDelay= 0.25f;
+    private float moveDelay= 0.20f;
 
     [System.Obsolete]
     private void Start()
     {
         playerSprite = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
-        playerMain = FindObjectOfType<PlayerMovement>().transform;
-        enemyAI = GetComponent<Transform>();
+        send = FindObjectOfType<PlayerMovement>().transform;
+        receive = GetComponent<Transform>();
     }
 
     private void Update()
@@ -118,11 +118,10 @@ public class HealthManager : MonoBehaviour
         hurtFlash = true;
         flashCountDown = flashTime;
 
-        Vector2 distance = (enemyAI.transform.position - playerMain.transform.position).normalized;
+        Vector2 distance = (send.transform.position - receive.transform.position).normalized;
         rb.AddForce(distance * force, ForceMode2D.Impulse);
 
         StartCoroutine(knockBackDelay(damageTaken));
-
 
         if (currentHealth <= 0)
         {

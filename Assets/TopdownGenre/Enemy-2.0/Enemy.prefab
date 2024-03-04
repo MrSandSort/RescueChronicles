@@ -128,7 +128,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 10
   m_LinearDrag: 0
   m_AngularDrag: 0.5
   m_GravityScale: 0
@@ -175,9 +175,8 @@ MonoBehaviour:
   maxhealth: 100
   rb: {fileID: 5148244811250094603}
   force: 100
-  enemyAI: {fileID: 472023367292677656}
-  popUpDamagePrefab: {fileID: 6642616540492731537, guid: af87631cced5d4f4caff5f4ac8005712, type: 3}
-  Text: {fileID: 5817547838085562978, guid: af87631cced5d4f4caff5f4ac8005712, type: 3}
+  receive: {fileID: 0}
+  popUpDamagePrefab: {fileID: 8023722797473999903, guid: 678f3bee3b4c05247a62ef3b4f6a6a14, type: 3}
   flashTime: 0.1
 --- !u!114 &5668664872159009089
 MonoBehaviour:
@@ -191,7 +190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f0ca97b223aa9b469bc3b487f26febd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageTaken: 5
+  damageTaken: 4
   isAttacking: 0
 --- !u!70 &7332930839260219302
 CapsuleCollider2D:

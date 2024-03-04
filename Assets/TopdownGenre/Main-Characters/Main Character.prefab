@@ -462,7 +462,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19addfd8d5cd38544a80ca1966c54c46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageTaken: 20
+  damageTaken: 8
 --- !u!114 &1179560682497766133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -477,6 +477,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 100
   maxhealth: 100
+  rb: {fileID: 1256446546671083154}
+  force: 100
+  receive: {fileID: 472023367292677656, guid: 56a53dea606ab454cb8a4731a97c86d1, type: 3}
+  popUpDamagePrefab: {fileID: 8023722797473999903, guid: 678f3bee3b4c05247a62ef3b4f6a6a14, type: 3}
   flashTime: 0.1
 --- !u!1 &7502240002062119902
 GameObject:

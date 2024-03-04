@@ -14,10 +14,10 @@ public class EnemyDealDamage : MonoBehaviour
     [SerializeField]
     private float force;
 
-    private Transform playerMain;
+    private Transform send;
 
     [SerializeField]
-    private Transform enemyAI;
+    private Transform receive;
 
     [SerializeField]
     public GameObject popUpDamagePrefab;
@@ -32,15 +32,15 @@ public class EnemyDealDamage : MonoBehaviour
 
     // Color for the hurt flash (red)
     private Color hurtColor = new Color(1f, 0f, 0f);
-    private float moveDelay=0.25f;
+    private float moveDelay=0.20f;
 
     [System.Obsolete]
     private void Start()
     {
         spriteEnemy = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
-        playerMain = FindObjectOfType<PlayerMovement>().transform;
-        enemyAI = GetComponent<Transform>();
+        send = FindObjectOfType<PlayerMovement>().transform;
+        receive = GetComponent<Transform>();
         
     }
 
@@ -99,7 +99,6 @@ public class EnemyDealDamage : MonoBehaviour
         if (rb.velocity == Vector2.zero) 
         {
             showDamage(damage.ToString());
-        
         }
 
     }
@@ -110,15 +109,28 @@ public class EnemyDealDamage : MonoBehaviour
         hurtFlash = true;
         flashTimer = flashTime;
 
-        Vector2 distance = (enemyAI.transform.position - playerMain.transform.position).normalized;
+        Vector2 distance = (receive.transform.position - send.transform.position).normalized;
         rb.AddForce(distance * force, ForceMode2D.Impulse);
 
         StartCoroutine(knockBackDelay(damageTaken));
 
         if (currentHealth <= 0)
         {
-            gameObject.SetActive(false);
+            StartCoroutine(FadeOut());
         }
+    }
+
+    private IEnumerator FadeOut()
+    {
+        float alpha = 1f;
+
+        while (alpha > 0)
+        {
+            alpha -= Time.deltaTime;
+            SetSpriteAlpha(alpha);
+            yield return null;
+        }
+        gameObject.SetActive(false);
     }
 
     void showDamage(string text) 
