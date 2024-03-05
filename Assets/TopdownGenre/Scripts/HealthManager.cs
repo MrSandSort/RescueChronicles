@@ -6,7 +6,6 @@ public class HealthManager : MonoBehaviour
 {
     public int currentHealth;
     public int maxhealth;
-    private EnemyAI enemy;
 
     [SerializeField]
     private Rigidbody2D rb;
@@ -29,7 +28,6 @@ public class HealthManager : MonoBehaviour
     private float flashCountDown = 0f;
 
 
-    // Color for the hurt flash (red)
     private Color hurtColor = new Color(1f, 0f, 0f);
     private SpriteRenderer playerSprite;
     private float moveDelay= 0.20f;
@@ -76,13 +74,11 @@ public class HealthManager : MonoBehaviour
         }
     }
 
-    // Method to set sprite color
     private void SetSpriteColor(Color color)
     {
         playerSprite.color = color;
     }
 
-    // Method to set sprite alpha
     private void SetSpriteAlpha(float alpha)
     {
         Color newColor = playerSprite.color;

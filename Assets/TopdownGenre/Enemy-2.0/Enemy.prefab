@@ -174,7 +174,7 @@ MonoBehaviour:
   currentHealth: 100
   maxhealth: 100
   rb: {fileID: 5148244811250094603}
-  force: 100
+  force: 25
   receive: {fileID: 0}
   popUpDamagePrefab: {fileID: 8023722797473999903, guid: 678f3bee3b4c05247a62ef3b4f6a6a14, type: 3}
   flashTime: 0.1

@@ -12,16 +12,17 @@ public class DialogManager : MonoBehaviour
     Actor[] currentActors;
     int activeMessage = 0;
     public static bool isActive = false;
-
+/*
     private Rigidbody2D playerRB;
     private Animator playerAnim; 
-
+*/
 
     public void OpenDialogue(Message[] messages, Actor[] actors) {
 ;
-        playerRB.velocity = Vector2.zero;
+      /*  
+       * playerRB.velocity = Vector2.zero;
         playerAnim.SetFloat("X", 0);
-        playerAnim.SetFloat("Y", 0);
+        playerAnim.SetFloat("Y", 0);*/
 
         currentMessages = messages;
         currentActors = actors;
@@ -75,7 +76,7 @@ public class DialogManager : MonoBehaviour
     {
         backgroundBox.transform.localScale = Vector3.zero;
 
-        GameObject rb = GameObject.FindGameObjectWithTag("Player");
+       /* GameObject rb = GameObject.FindGameObjectWithTag("Player");
         if (rb != null)
         {
             playerRB = rb.GetComponent<Rigidbody2D>();
@@ -85,7 +86,7 @@ public class DialogManager : MonoBehaviour
         if (animator != null)
         {
             playerAnim = animator.GetComponent<Animator>();
-        }
+        }*/
     }
 
     // Update is called once per frame

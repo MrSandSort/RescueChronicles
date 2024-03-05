@@ -12,7 +12,7 @@ public class EnemyHealthBar : MonoBehaviour
     [System.Obsolete]
     void Start()
     {
-        enemyHealth = FindObjectOfType<EnemyDealDamage>();
+        enemyHealth = GetComponentInParent<EnemyDealDamage>();
 
     }
     void Update()

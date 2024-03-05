@@ -24,6 +24,10 @@ public class PlayerMovement : MonoBehaviour
     {
         if (DialogManager.isActive == true)
         {
+            playerRb.velocity = Vector2.zero;
+            animator.SetFloat("X",0);
+            animator.SetFloat("Y",0);
+
             return;
         }
 
@@ -43,6 +47,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (isAttacking)
         {
+            playerRb.velocity = Vector2.zero;
             attackCounter -= Time.deltaTime;
 
             if (attackCounter <= 0)

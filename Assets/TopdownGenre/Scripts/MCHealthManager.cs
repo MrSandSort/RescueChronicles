@@ -11,7 +11,7 @@ public class MCHealthManager : MonoBehaviour
     [System.Obsolete]
     void Start()
     {
-        healthMan= FindObjectOfType<HealthManager>();
+         healthMan= FindObjectOfType<HealthManager>();
 
     }
     void Update()

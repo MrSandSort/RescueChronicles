@@ -29,8 +29,6 @@ public class EnemyDealDamage : MonoBehaviour
     private float flashTimer = 0f;
 
     private SpriteRenderer spriteEnemy;
-
-    // Color for the hurt flash (red)
     private Color hurtColor = new Color(1f, 0f, 0f);
     private float moveDelay=0.20f;
 
@@ -77,13 +75,11 @@ public class EnemyDealDamage : MonoBehaviour
         }
     }
 
-    // Method to set sprite color
     private void SetSpriteColor(Color color)
     {
         spriteEnemy.color = color;
     }
 
-    // Method to set sprite alpha
     private void SetSpriteAlpha(float alpha)
     {
         Color newColor = spriteEnemy.color;
