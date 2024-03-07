@@ -5,8 +5,10 @@ using UnityEngine.Events;
 
 public class Damageable : MonoBehaviour
 {
-    Animator animator;
     public UnityEvent<int,Vector2> damagableHit;
+    public UnityEvent<int, int> healthChange; 
+
+    Animator animator;
 
     [SerializeField]
     public bool isInv = false;
@@ -40,6 +42,8 @@ public class Damageable : MonoBehaviour
         set
         {
             _health = value;
+
+            healthChange?.Invoke(Health,MaxHealth);
 
             if (_health <= 0) 
             {
