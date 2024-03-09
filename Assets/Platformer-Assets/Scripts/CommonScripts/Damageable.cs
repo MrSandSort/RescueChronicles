@@ -6,7 +6,7 @@ using UnityEngine.Events;
 public class Damageable : MonoBehaviour
 {
     public UnityEvent<int,Vector2> damagableHit;
-    public UnityEvent<int, int> healthChange; 
+    public UnityEvent<int, int> healthChange;
 
     Animator animator;
 
@@ -137,8 +137,14 @@ public class Damageable : MonoBehaviour
             return true;
         }
         return false;
-    
 
     }
-  
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Obstacle") 
+        {
+            Health = 0;
+        }
+    }
 }

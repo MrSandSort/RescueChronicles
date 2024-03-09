@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 [RequireComponent(typeof(Rigidbody2D), typeof(TouchingGround), typeof(Damageable))]
 public class EnemyPlatform : MonoBehaviour
@@ -152,4 +153,13 @@ public class EnemyPlatform : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D box)
+    {
+        if (box.gameObject.tag=="Box")
+        {
+            FlipDirection();
+        }
+
+
+    }
 }

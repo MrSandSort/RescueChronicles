@@ -116,16 +116,18 @@ GameObject:
   m_Component:
   - component: {fileID: 1921458774261050034}
   - component: {fileID: 691275675033656122}
+  - component: {fileID: 5669100393668651649}
   - component: {fileID: 656336038000391735}
   - component: {fileID: 1402028264882659744}
   - component: {fileID: 2362637780943198134}
   - component: {fileID: 1391177900851985475}
   - component: {fileID: 1940363304835388450}
-  - component: {fileID: 2647705423121579784}
   - component: {fileID: 4683934466390805083}
+  - component: {fileID: 1714385840473486111}
+  - component: {fileID: 7709293870146957410}
   m_Layer: 7
   m_Name: MainCharacter
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -199,6 +201,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5669100393668651649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5146654988683903064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d5be575f9366e84a874f69917769862, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  walkSpeed: 5
+  airWalkSpeed: 3
+  runSpeed: 8
+  diamondManager: {fileID: 4182374411476866488, guid: a0a55d537c91d864d8fcb1062e6d179e, type: 3}
+  jumpImpulse: 8
+  _isMoving: 0
+  _isRunning: 0
 --- !u!114 &656336038000391735
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -226,7 +247,7 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2647705423121579784}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Platformer_PlayerController, Assembly-CSharp
         m_MethodName: OnMove
         m_Mode: 0
@@ -246,7 +267,7 @@ MonoBehaviour:
     m_ActionName: 'Player/Look[/Mouse/delta,/Touchscreen/delta,/Pen/delta]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2647705423121579784}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Platformer_PlayerController, Assembly-CSharp
         m_MethodName: OnAttack
         m_Mode: 0
@@ -302,7 +323,7 @@ MonoBehaviour:
     m_ActionName: UI/TrackedDeviceOrientation
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2647705423121579784}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Platformer_PlayerController, Assembly-CSharp
         m_MethodName: OnRun
         m_Mode: 0
@@ -318,7 +339,7 @@ MonoBehaviour:
     m_ActionName: 'Player/Run[/Keyboard/leftShift]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2647705423121579784}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Platformer_PlayerController, Assembly-CSharp
         m_MethodName: OnJump
         m_Mode: 0
@@ -455,24 +476,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &2647705423121579784
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5146654988683903064}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d5be575f9366e84a874f69917769862, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  walkSpeed: 5
-  airWalkSpeed: 3
-  runSpeed: 8
-  jumpImpulse: 10
-  _isMoving: 0
-  _isRunning: 0
 --- !u!114 &4683934466390805083
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -488,9 +491,9 @@ MonoBehaviour:
   damagableHit:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2647705423121579784}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Platformer_PlayerController, Assembly-CSharp
-        m_MethodName: OnHit
+        m_MethodName: 
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -508,6 +511,38 @@ MonoBehaviour:
   _maxHealth: 100
   _health: 100
   _isAlive: 1
+--- !u!114 &1714385840473486111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5146654988683903064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d5be575f9366e84a874f69917769862, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  walkSpeed: 5
+  airWalkSpeed: 3
+  runSpeed: 8
+  diamondManager: {fileID: 7862597711126523097, guid: a0a55d537c91d864d8fcb1062e6d179e, type: 3}
+  jumpImpulse: 0
+  _isMoving: 0
+  _isRunning: 0
+--- !u!114 &7709293870146957410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5146654988683903064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17f5584b2539d3247b6d3389b7a7e9b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  diamondCount: 0
 --- !u!1 &5975110352501388445
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(Rigidbody2D), typeof(TouchingGround), typeof(Damageable))]
+[RequireComponent(typeof(Rigidbody2D), typeof(TouchingGround) ,typeof(Damageable))]
 public class Platformer_PlayerController : MonoBehaviour
 {
     Vector2 moveInput;
@@ -51,6 +51,7 @@ public class Platformer_PlayerController : MonoBehaviour
 
     TouchingGround touchingDirections;
     Damageable damageable;
+
     Rigidbody2D rb;
 
     Animator animator;
@@ -118,8 +119,6 @@ public class Platformer_PlayerController : MonoBehaviour
         
         } 
     }
-
-
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -199,4 +198,6 @@ public class Platformer_PlayerController : MonoBehaviour
         rb.velocity = new Vector2(knockback.x, rb.velocity.y + knockback.y);
         
     }
+
+
 }
