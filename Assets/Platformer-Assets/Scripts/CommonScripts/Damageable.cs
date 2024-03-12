@@ -10,6 +10,9 @@ public class Damageable : MonoBehaviour
 
     Animator animator;
 
+    public GameObject[] ItemDrops;
+
+
     [SerializeField]
     public bool isInv = false;
 
@@ -106,8 +109,8 @@ public class Damageable : MonoBehaviour
     }
     public bool Hit(int damage, Vector2 knockback) 
     {
-    
-        if(IsAlive && !isInv) 
+
+        if (IsAlive && !isInv)
         {
 
             Health -= damage;
@@ -119,9 +122,12 @@ public class Damageable : MonoBehaviour
 
             CharacterEvents.characterDamaged.Invoke(gameObject, damage);
 
+            if (!IsAlive) 
+            {
+                ItemDrop();
+            }
             return true;
         }
-        
         return false;
     }
 
@@ -146,5 +152,16 @@ public class Damageable : MonoBehaviour
         {
             Health = 0;
         }
+    }
+    public void ItemDrop()
+    {
+        if (ItemDrops.Length == 0) 
+        {
+            return;
+        }
+        int randomIndex = Random.Range(0, ItemDrops.Length);
+
+        Instantiate(ItemDrops[randomIndex], transform.position + new Vector3(0, 1, 0), Quaternion.identity);
+    
     }
 }

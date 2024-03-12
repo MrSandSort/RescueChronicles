@@ -14,6 +14,9 @@ TagManager:
   - Corner
   - diamond
   - Sprinter
+  - key
+  - specBox
+  - Log
   layers:
   - Default
   - TransparentFX

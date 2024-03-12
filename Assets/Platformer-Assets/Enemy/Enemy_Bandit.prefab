@@ -259,6 +259,7 @@ MonoBehaviour:
   healthChange:
     m_PersistentCalls:
       m_Calls: []
+  ItemDrops: []
   isInv: 0
   invTimer: 0.5
   _maxHealth: 100
@@ -416,7 +417,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be7b06f9665c0f24192f3cb709e73d01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDamage: 10
+  attackDamage: 50
   knockback: {x: 5, y: 2}
 --- !u!60 &3503758804243413790
 PolygonCollider2D:

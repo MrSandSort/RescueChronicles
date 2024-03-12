@@ -1,25 +1,25 @@
 fileFormatVersion: 2
-guid: c222dd7e946c86b41a027145a67bad9b
+guid: d91f702170017314aaf9fc5684df9960
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7459150412033714470
-    second: spr_player_right_walk_0
+      213: 556052574796523437
+    second: right_walk_0
   - first:
-      213: 5601256318761771646
-    second: spr_player_right_walk_1
+      213: 8186482895003537430
+    second: right_walk_1
   - first:
-      213: -782704864401134209
-    second: spr_player_right_walk_2
+      213: -1921252550937280183
+    second: right_walk_2
   - first:
-      213: -2338811545217413367
-    second: spr_player_right_walk_3
+      213: -3386566805745200247
+    second: right_walk_3
   - first:
-      213: 6781460909210953161
-    second: spr_player_right_walk_4
+      213: -1336572727797950210
+    second: right_walk_4
   - first:
-      213: 706504857908836261
-    second: spr_player_right_walk_5
+      213: 3278848707383195353
+    second: right_walk_5
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -90,7 +90,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -113,127 +113,127 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Right_Walk_0
+      name: right_walk_0
       rect:
         serializedVersion: 2
         x: 24
-        y: 18
+        y: 78
         width: 15
-        height: 23
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: bd78ec48f62dadc4890ad3fbcc9c0739
-      internalID: 1170419012
+      spriteID: da72035eede77b700800000000000000
+      internalID: 556052574796523437
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Right_Walk_1
+      name: right_walk_1
       rect:
         serializedVersion: 2
         x: 88
-        y: 18
+        y: 78
         width: 15
-        height: 24
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 0d62d93191234034487997be2c444b1a
-      internalID: -11116929
+      spriteID: 6105f74b1da3c9170800000000000000
+      internalID: 8186482895003537430
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Right_Walk_2
+      name: right_walk_2
       rect:
         serializedVersion: 2
         x: 152
-        y: 18
+        y: 78
         width: 15
-        height: 24
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: e08b443f4a064cc43bb5cda8b1b3fa33
-      internalID: 1966777886
+      spriteID: 9410291fbf65655e0800000000000000
+      internalID: -1921252550937280183
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Right_Walk_3
+      name: right_walk_3
       rect:
         serializedVersion: 2
         x: 216
-        y: 18
-        width: 15
-        height: 23
+        y: 78
+        width: 16
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: be1fe0028b29f4a4093dfe84f9b1caad
-      internalID: 820904864
+      spriteID: 9839d67de6f7001d0800000000000000
+      internalID: -3386566805745200247
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Right_Walk_4
+      name: right_walk_4
       rect:
         serializedVersion: 2
-        x: 280
-        y: 18
+        x: 152
+        y: 14
         width: 15
-        height: 24
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 2d87816280600c843973af216e5c5c54
-      internalID: -1705243917
+      spriteID: ef8d02f7f2a837de0800000000000000
+      internalID: -1336572727797950210
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Right_Walk_5
+      name: right_walk_5
       rect:
         serializedVersion: 2
-        x: 344
-        y: 18
+        x: 216
+        y: 14
         width: 15
-        height: 24
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: f737dacbe029c8c4c87653130c0e0cfa
-      internalID: 1461779601
+      spriteID: 9d6f2dbf68fc08d20800000000000000
+      internalID: 3278848707383195353
       vertices: []
       indices: 
       edges: []
@@ -241,7 +241,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 0103ac66ae0ff914b9d7eed39e0bda1b
+    spriteID: 3b8d89a934edcfb4e8fc21eb01b513e5
     internalID: 0
     vertices: []
     indices: 
@@ -249,12 +249,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Right_Walk_0: 1170419012
-      Right_Walk_1: -11116929
-      Right_Walk_2: 1966777886
-      Right_Walk_3: 820904864
-      Right_Walk_4: -1705243917
-      Right_Walk_5: 1461779601
+      right_walk_0: 556052574796523437
+      right_walk_1: 8186482895003537430
+      right_walk_2: -1921252550937280183
+      right_walk_3: -3386566805745200247
+      right_walk_4: -1336572727797950210
+      right_walk_5: 3278848707383195353
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

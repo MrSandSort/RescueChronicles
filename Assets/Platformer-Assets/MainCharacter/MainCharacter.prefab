@@ -123,8 +123,6 @@ GameObject:
   - component: {fileID: 1391177900851985475}
   - component: {fileID: 1940363304835388450}
   - component: {fileID: 4683934466390805083}
-  - component: {fileID: 1714385840473486111}
-  - component: {fileID: 7709293870146957410}
   m_Layer: 7
   m_Name: MainCharacter
   m_TagString: Player
@@ -216,8 +214,7 @@ MonoBehaviour:
   walkSpeed: 5
   airWalkSpeed: 3
   runSpeed: 8
-  diamondManager: {fileID: 4182374411476866488, guid: a0a55d537c91d864d8fcb1062e6d179e, type: 3}
-  jumpImpulse: 8
+  normalJumpImpulse: 8
   _isMoving: 0
   _isRunning: 0
 --- !u!114 &656336038000391735
@@ -461,7 +458,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.2
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -491,9 +488,9 @@ MonoBehaviour:
   damagableHit:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 5669100393668651649}
         m_TargetAssemblyTypeName: Platformer_PlayerController, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: OnHit
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -506,43 +503,12 @@ MonoBehaviour:
   healthChange:
     m_PersistentCalls:
       m_Calls: []
+  ItemDrops: []
   isInv: 1
   invTimer: 0.5
   _maxHealth: 100
   _health: 100
   _isAlive: 1
---- !u!114 &1714385840473486111
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5146654988683903064}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d5be575f9366e84a874f69917769862, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  walkSpeed: 5
-  airWalkSpeed: 3
-  runSpeed: 8
-  diamondManager: {fileID: 7862597711126523097, guid: a0a55d537c91d864d8fcb1062e6d179e, type: 3}
-  jumpImpulse: 0
-  _isMoving: 0
-  _isRunning: 0
---- !u!114 &7709293870146957410
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5146654988683903064}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17f5584b2539d3247b6d3389b7a7e9b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  diamondCount: 0
 --- !u!1 &5975110352501388445
 GameObject:
   m_ObjectHideFlags: 0
