@@ -61,6 +61,12 @@ public class Platformer_PlayerController : MonoBehaviour
 
     [SerializeField]
     private float normalJumpImpulse = 8f;
+
+    [SerializeField]
+    private float fallDamageThreshold = 10f;
+
+    [SerializeField]
+    private float fallDamageMultiplier = 2f;
     public bool IsMoving
     {
         get
@@ -158,6 +164,12 @@ public class Platformer_PlayerController : MonoBehaviour
             rb.velocity = new Vector2(moveInput.x * CurrentMoveSpeed, rb.velocity.y);
 
         animator.SetFloat(AnimationStrings.yVelocity, rb.velocity.y);
+
+        if (rb.velocity.y < -fallDamageThreshold && !touchingDirections.IsGrounded)
+        {
+            int fallDamage = Mathf.RoundToInt(Mathf.Abs(rb.velocity.y) * fallDamageMultiplier); 
+            damageable.Hit(fallDamage, Vector2.zero);
+        }
     }
 
     public void OnMove(InputAction.CallbackContext context)
