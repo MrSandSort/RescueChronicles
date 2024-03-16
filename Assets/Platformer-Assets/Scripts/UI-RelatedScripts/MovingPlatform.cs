@@ -30,7 +30,7 @@ public class MovingPlatform : MonoBehaviour
     {
         if (other.CompareTag("Player")) 
         {
-            other.transform.SetParent(this.transform);
+            other.transform.SetParent(transform, true);
         }
     }
 

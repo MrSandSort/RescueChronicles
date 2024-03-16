@@ -51,6 +51,7 @@ public class Damageable : MonoBehaviour
             if (_health <= 0) 
             {
                 IsAlive = false;
+
             }
         }
     }
@@ -125,6 +126,7 @@ public class Damageable : MonoBehaviour
             if (!IsAlive) 
             {
                 ItemDrop();
+
             }
             return true;
         }
