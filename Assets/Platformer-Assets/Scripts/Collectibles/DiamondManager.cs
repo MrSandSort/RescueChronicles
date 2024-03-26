@@ -36,7 +36,7 @@ public class DiamondManager : MonoBehaviour
 
     private void UpdateSprinterActivation()
     {
-        bool activateSprinters = diamonds >= 4;
+        bool activateSprinters = diamonds >= 5;
         sprinter.SetActive(activateSprinters);
 
     }

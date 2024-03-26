@@ -36,7 +36,7 @@ public class KeyManager : MonoBehaviour
 
     private void UpdateLogActivation()
     {
-        bool activateLog = keys >= 3;
+        bool activateLog = keys >= 5;
         woodenLog.SetActive(activateLog);
 
     }

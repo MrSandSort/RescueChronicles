@@ -9,7 +9,9 @@ public class Respawn_Player : MonoBehaviour
     public GameObject respawnPoint;
 
     Damageable damageable;
+    
     private int savedHealth;
+    
     void Start()
     {
         damageable = player.GetComponent<Damageable>();
