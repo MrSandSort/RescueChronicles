@@ -250,6 +250,11 @@ public class Platformer_PlayerController : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, normalJumpImpulse * jumpImpulseMultiplier);
 
         }
+        if (other.gameObject.tag=="FallingObject")
+        {
+            damageable.Health -= 30;
+            Destroy(other.gameObject, 2f);
+        }
 
     }
 }
