@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: f1f27779859c8954e97c5f3f07477397
+guid: e2b1fa0e1a6c1d148ac955df5e2b30c1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2571550013646586611
-    second: adventurer-ladder-climb-01-1.3_0
+      213: 1731723093778444599
+    second: adventurer-ladder-climb-03-1.3_0
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -98,7 +98,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: adventurer-ladder-climb-01-1.3_0
+      name: adventurer-ladder-climb-03-1.3_0
       rect:
         serializedVersion: 2
         x: 18
@@ -112,8 +112,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3f24e8ddc1bffa320800000000000000
-      internalID: 2571550013646586611
+      spriteID: 731310e8af0580810800000000000000
+      internalID: 1731723093778444599
       vertices: []
       indices: 
       edges: []
@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      adventurer-ladder-climb-03-1.3_0: 1731723093778444599
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

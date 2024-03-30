@@ -22,7 +22,6 @@ public class KeyManager : MonoBehaviour
         }
     }
 
-
     private void OnGUI()
     {
         keyDisplay.text = keys.ToString();

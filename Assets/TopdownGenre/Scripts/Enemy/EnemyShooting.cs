@@ -28,7 +28,6 @@ public class EnemyShooting : MonoBehaviour
             {
                 timer = 0;
                 fireballAttack();
-
             }
         }
      

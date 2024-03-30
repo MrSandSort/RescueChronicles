@@ -12,6 +12,7 @@ public class TouchingGround : MonoBehaviour
     public float wallCheckDistance = 0.2f;
     public float ceilingCheckDistance = 0.05f;
 
+
     RaycastHit2D[] groundHits = new RaycastHit2D[5];
     RaycastHit2D[] wallHits = new RaycastHit2D[5]; 
     RaycastHit2D[] ceilingHits = new RaycastHit2D[5];
