@@ -282,171 +282,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &59164085
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 59164089}
-  - component: {fileID: 59164088}
-  - component: {fileID: 59164087}
-  - component: {fileID: 59164086}
-  m_Layer: 0
-  m_Name: Spikes
-  m_TagString: Spikes
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!68 &59164086
-EdgeCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 59164085}
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
-  m_Points:
-  - {x: 1.0011826, y: -0.38283253}
-  - {x: -1.0153046, y: -0.40116692}
-  - {x: -1.0261383, y: -0.27196884}
-  - {x: -1.0149307, y: -0.014331818}
-  - {x: -1.0127335, y: 0.21209812}
-  - {x: -0.736145, y: 0.4943447}
-  - {x: -0.5078125, y: 0.26038933}
-  - {x: -0.3366623, y: 0.4618044}
-  - {x: -0.23248291, y: 0.5721464}
-  - {x: -0.013153076, y: 0.32573223}
-  - {x: 0.21918488, y: 0.5517988}
-  - {x: 0.47927094, y: 0.29328156}
-  - {x: 0.6610184, y: 0.5345526}
-  - {x: 1.0180893, y: 0.29261875}
-  - {x: 1.0176926, y: 0.0067424774}
-  - {x: 1.0174026, y: -0.34802914}
-  m_AdjacentStartPoint: {x: 0, y: 0}
-  m_AdjacentEndPoint: {x: 0, y: 0}
-  m_UseAdjacentStartPoint: 0
-  m_UseAdjacentEndPoint: 0
---- !u!95 &59164087
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 59164085}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: eadfad7c3b101dc4681074eae138c76d, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
---- !u!212 &59164088
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 59164085}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: -3804453786874968470, guid: 4d9c404b3e29dbe4f81b0893280da318, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 2, y: 2}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
---- !u!4 &59164089
+--- !u!4 &59164089 stripped
 Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 7111730353012019961, guid: 25e256a2901834b47b2dc8f919b112c0, type: 3}
+  m_PrefabInstance: {fileID: 2505657971963501600}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 59164085}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 11.7263565, y: -1.9444199, z: 1.4200056}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1854018533}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &141741644
 GameObject:
   m_ObjectHideFlags: 0
@@ -4171,6 +4011,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcbc8a24806fffe48acfb805ca6884cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemy_id: 
+  damageable: {fileID: 0}
   walkSpeed: 3
   walkStopRate: 0.05
   attackArea: {fileID: 461282359}
@@ -4191,7 +4033,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damagableHit:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 551006433}
+        m_TargetAssemblyTypeName: EnemyPlatform, Assembly-CSharp
+        m_MethodName: OnHit
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   healthChange:
     m_PersistentCalls:
       m_Calls: []
@@ -6364,6 +6218,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcbc8a24806fffe48acfb805ca6884cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemy_id: 
+  damageable: {fileID: 0}
   walkSpeed: 3
   walkStopRate: 0.05
   attackArea: {fileID: 528148129}
@@ -6384,7 +6240,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damagableHit:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 856977583}
+        m_TargetAssemblyTypeName: EnemyPlatform, Assembly-CSharp
+        m_MethodName: OnHit
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   healthChange:
     m_PersistentCalls:
       m_Calls: []
@@ -8973,11 +8841,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1921458774261050034, guid: 60dededd91b4f974abcef3961e608fa6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 268.33
+      value: 89.6
       objectReference: {fileID: 0}
     - target: {fileID: 1921458774261050034, guid: 60dededd91b4f974abcef3961e608fa6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -23.22
+      value: -13.6
       objectReference: {fileID: 0}
     - target: {fileID: 1921458774261050034, guid: 60dededd91b4f974abcef3961e608fa6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -9294,7 +9162,7 @@ Transform:
   m_GameObject: {fileID: 1289885797}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 268.33, y: -23.22, z: -10}
+  m_LocalPosition: {x: 89.6, y: -13.6, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9369,6 +9237,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcbc8a24806fffe48acfb805ca6884cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemy_id: 
+  damageable: {fileID: 0}
   walkSpeed: 3
   walkStopRate: 0.05
   attackArea: {fileID: 1949650288}
@@ -9389,7 +9259,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damagableHit:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1294537979}
+        m_TargetAssemblyTypeName: EnemyPlatform, Assembly-CSharp
+        m_MethodName: OnHit
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   healthChange:
     m_PersistentCalls:
       m_Calls: []
@@ -14541,7 +14423,7 @@ Transform:
   m_GameObject: {fileID: 1606177660}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 268.33, y: -23.22, z: -10}
+  m_LocalPosition: {x: 89.6, y: -13.6, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -14674,6 +14556,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1460699152}
     m_Modifications:
+    - target: {fileID: 4502954229609672126, guid: 9a67c0d66245d7444af5a85cd6541245, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4605091184919126895, guid: 9a67c0d66245d7444af5a85cd6541245, type: 3}
       propertyPath: m_Name
       value: DialogTree
@@ -15004,6 +14890,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcbc8a24806fffe48acfb805ca6884cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemy_id: 
+  damageable: {fileID: 0}
   walkSpeed: 3
   walkStopRate: 0.05
   attackArea: {fileID: 2017456254}
@@ -15024,7 +14912,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damagableHit:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1681834686}
+        m_TargetAssemblyTypeName: EnemyPlatform, Assembly-CSharp
+        m_MethodName: OnHit
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   healthChange:
     m_PersistentCalls:
       m_Calls: []
@@ -16019,10 +15919,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcbc8a24806fffe48acfb805ca6884cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemy_id: 
+  damageable: {fileID: 0}
   walkSpeed: 3
   walkStopRate: 0.05
   attackArea: {fileID: 1788003549}
-  cliffDetectionArea: {fileID: 0}
+  cliffDetectionArea: {fileID: 1246510789}
   _hasTarget: 0
   walkDirectionVector: {x: -1, y: 0}
 --- !u!114 &1780749770
@@ -16039,7 +15941,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damagableHit:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1780749769}
+        m_TargetAssemblyTypeName: EnemyPlatform, Assembly-CSharp
+        m_MethodName: OnHit
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   healthChange:
     m_PersistentCalls:
       m_Calls: []
@@ -17257,6 +17171,63 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &2505657971963501600
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1854018533}
+    m_Modifications:
+    - target: {fileID: 5656329571862900362, guid: 25e256a2901834b47b2dc8f919b112c0, type: 3}
+      propertyPath: m_Name
+      value: Spikes
+      objectReference: {fileID: 0}
+    - target: {fileID: 7111730353012019961, guid: 25e256a2901834b47b2dc8f919b112c0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 11.7263565
+      objectReference: {fileID: 0}
+    - target: {fileID: 7111730353012019961, guid: 25e256a2901834b47b2dc8f919b112c0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.9444199
+      objectReference: {fileID: 0}
+    - target: {fileID: 7111730353012019961, guid: 25e256a2901834b47b2dc8f919b112c0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.4200056
+      objectReference: {fileID: 0}
+    - target: {fileID: 7111730353012019961, guid: 25e256a2901834b47b2dc8f919b112c0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7111730353012019961, guid: 25e256a2901834b47b2dc8f919b112c0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7111730353012019961, guid: 25e256a2901834b47b2dc8f919b112c0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7111730353012019961, guid: 25e256a2901834b47b2dc8f919b112c0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7111730353012019961, guid: 25e256a2901834b47b2dc8f919b112c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7111730353012019961, guid: 25e256a2901834b47b2dc8f919b112c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7111730353012019961, guid: 25e256a2901834b47b2dc8f919b112c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 25e256a2901834b47b2dc8f919b112c0, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

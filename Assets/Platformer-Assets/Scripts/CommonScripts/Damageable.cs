@@ -9,7 +9,6 @@ public class Damageable : MonoBehaviour
     public UnityEvent<int, int> healthChange;
 
     Animator animator;
-
     public GameObject[] ItemDrops;
 
 
@@ -126,7 +125,6 @@ public class Damageable : MonoBehaviour
             if (!IsAlive) 
             {
                 ItemDrop();
-
             }
             return true;
         }
@@ -164,6 +162,7 @@ public class Damageable : MonoBehaviour
         int randomIndex = Random.Range(0, ItemDrops.Length);
 
         Instantiate(ItemDrops[randomIndex], transform.position + new Vector3(0, 1, 0), Quaternion.identity);
-    
+
     }
+
 }

@@ -7,7 +7,7 @@ using UnityEngine;
 public class KeyManager : MonoBehaviour
 {
     public static KeyManager instance;
-    private int keys;
+    public int keys;
 
     [SerializeField] private TMP_Text keyDisplay;
     [SerializeField] private GameObject woodenLog;
@@ -30,13 +30,17 @@ public class KeyManager : MonoBehaviour
     public void AddKeys(int amount)
     {
         keys += amount;
-        UpdateLogActivation();
-    }
 
-    private void UpdateLogActivation()
-    {
-        bool activateLog = keys >= 5;
-        woodenLog.SetActive(activateLog);
+        if (WoodenLog.instance) 
+        {
+            WoodenLog.instance.UpdateWoodenLog();
+        }
+        else
+        {
+            Debug.Log("No woodenLog this time");
+        }
+       
 
-    }
+    } 
 }
+

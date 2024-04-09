@@ -1,9 +1,13 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovingPlatform : MonoBehaviour
+public class MovingPlatform : MonoBehaviour, IDataPersistence
 {
+    [SerializeField]
+    private string platform_id;
+
     [SerializeField]
     private Transform posA, posB;
 
@@ -26,6 +30,13 @@ public class MovingPlatform : MonoBehaviour
 
     }
 
+
+    [ContextMenu("Generate guid for Id")]
+    private void GenerateGuidId()
+    {
+        platform_id = Guid.NewGuid().ToString();
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player")) 
@@ -34,11 +45,31 @@ public class MovingPlatform : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit2D(Collider2D other)
+    private void OnTriggerExit2D(Collider2D another)
     {
-        if (other.CompareTag("Player")) 
+        if (another.CompareTag("Player")) 
         {
-            other.transform.SetParent(null);
+            another.transform.SetParent(null);
+        }
+    }
+
+    public void LoadData(GameData data)
+    {
+        if (data.platformPos.TryGetValue(platform_id, out Vector3 savedPosition))
+        {
+            transform.position = savedPosition;
+        }
+    }
+
+    public void SaveData(ref GameData data)
+    {
+        if (data.platformPos.ContainsKey(platform_id))
+        {
+            data.platformPos[platform_id] = transform.position;
+        }
+        else
+        {
+            data.platformPos.Add(platform_id, transform.position);
         }
     }
 }

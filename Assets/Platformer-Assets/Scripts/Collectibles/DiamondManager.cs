@@ -7,20 +7,17 @@ using UnityEngine;
 public class DiamondManager : MonoBehaviour
 {
     public static DiamondManager instance;
-    private int diamonds;
+    public int diamonds;
 
     [SerializeField] private TMP_Text diamondDisplay;
-    [SerializeField] private GameObject sprinter;
 
     private void Awake()
     {
         if (!instance)
         {
             instance = this;
-            sprinter.SetActive(false);
         }
     }
-
 
     private void OnGUI()
     {
@@ -29,15 +26,8 @@ public class DiamondManager : MonoBehaviour
 
     public void ChangeDiamonds(int amount) 
     {
-
         diamonds += amount;
-        UpdateSprinterActivation();
     }
 
-    private void UpdateSprinterActivation()
-    {
-        bool activateSprinters = diamonds >= 5;
-        sprinter.SetActive(activateSprinters);
-
-    }
+   
 }

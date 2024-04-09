@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Rigidbody2D), typeof(TouchingGround), typeof(Damageable))]
-public class Platformer_PlayerController : MonoBehaviour
+public class Platformer_PlayerController : MonoBehaviour, IDataPersistence
 {
     private float horizontal;
     Vector2 moveInput;
@@ -51,13 +51,13 @@ public class Platformer_PlayerController : MonoBehaviour
         }
     }
 
-    [SerializeField] float wallSlideSpeed = 0f; 
+    [SerializeField] float wallSlideSpeed = 0f;
     [SerializeField] private Transform wallCheck;
-    [SerializeField] private LayerMask wallLayer ;
+    [SerializeField] private LayerMask wallLayer;
     [SerializeField] Vector2 wallCheckSize;
 
-    [SerializeField] float wallJumpForce= 18f;
-    [SerializeField] float wallJumpDirection=-1;
+    [SerializeField] float wallJumpForce = 18f;
+    [SerializeField] float wallJumpDirection = -1;
     [SerializeField] Vector2 wallJumpAngle;
 
     private bool isTouchingWall;
@@ -76,25 +76,20 @@ public class Platformer_PlayerController : MonoBehaviour
     Animator animator;
     private bool _isFacingRight = true;
 
-    private bool IsWalled() 
+    private bool IsWalled()
     {
-       return isTouchingWall= Physics2D.OverlapBox(wallCheck.position,wallCheckSize,0, wallLayer);
+        return isTouchingWall = Physics2D.OverlapBox(wallCheck.position, wallCheckSize, 0, wallLayer);
     }
 
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawCube(wallCheck.position,wallCheckSize);
+        Gizmos.DrawCube(wallCheck.position, wallCheckSize);
     }
 
     [SerializeField]
     private float normalJumpImpulse = 8f;
 
-   /* [SerializeField]
-    private float fallDamageThreshold = 10f;
-
-    [SerializeField]
-    private float fallDamageMultiplier = 2f;*/
     public bool IsMoving
     {
         get
@@ -129,7 +124,7 @@ public class Platformer_PlayerController : MonoBehaviour
             animator.SetBool(AnimationStrings.isRunning, value);
         }
     }
-  
+
     public bool IsFacingRight
     {
         get
@@ -193,7 +188,6 @@ public class Platformer_PlayerController : MonoBehaviour
         };
 
     }
-
     private void FixedUpdate()
     {
         WallSlide();
@@ -212,9 +206,19 @@ public class Platformer_PlayerController : MonoBehaviour
          }*/
     }
 
-    private void Jump() 
+    public void LoadData(GameData data ) 
     {
-        if (Input.GetKeyDown(KeyCode.LeftControl)) 
+        this.transform.position = data.playerPos;
+    }
+    public void SaveData(ref GameData data) 
+    {
+        data.playerPos = this.transform.position;
+    }
+
+
+    private void Jump()
+    {
+        if (Input.GetKeyDown(KeyCode.LeftControl))
         {
             canJump = true;
         }
@@ -222,37 +226,37 @@ public class Platformer_PlayerController : MonoBehaviour
 
     private void WallSlide()
     {
-        if (isTouchingWall && !touchingDirections.IsGrounded && rb.velocity.y < 0) 
+        if (isTouchingWall && !touchingDirections.IsGrounded && rb.velocity.y < 0)
         {
             isWallSliding = true;
         }
-        else 
+        else
         {
             isWallSliding = false;
         }
 
-        if (isWallSliding) 
+        if (isWallSliding)
         {
-            rb.velocity = new Vector2(rb.velocity.x,-wallSlideSpeed);
+            rb.velocity = new Vector2(rb.velocity.x, -wallSlideSpeed);
         }
 
-       
+
     }
 
-    private void WallJump() 
+    private void WallJump()
     {
-        if ((isWallSliding || isTouchingWall) && canJump) 
+        if ((isWallSliding || isTouchingWall) && canJump)
         {
-            rb.AddForce(new Vector2(wallJumpForce * wallJumpDirection * wallJumpAngle.x, wallJumpForce* wallJumpAngle.y), ForceMode2D.Impulse);
+            rb.AddForce(new Vector2(wallJumpForce * wallJumpDirection * wallJumpAngle.x, wallJumpForce * wallJumpAngle.y), ForceMode2D.Impulse);
             canJump = false;
         }
     }
 
-    void Flip() 
+    void Flip()
     {
         wallJumpDirection *= -1;
         _isFacingRight = !_isFacingRight;
-        transform.Rotate(0,180,0);
+        transform.Rotate(0, 180, 0);
     }
     public void OnMove(InputAction.CallbackContext context)
     {
@@ -319,6 +323,15 @@ public class Platformer_PlayerController : MonoBehaviour
         }
     }
 
+    public void OnRangeAttack(InputAction.CallbackContext context)
+    {
+
+        if (context.started)
+        {
+            animator.SetTrigger(AnimationStrings.rangeAttack);
+        }
+    }
+
     public void OnHit(int damage, Vector2 knockback)
     {
         rb.velocity = new Vector2(knockback.x, rb.velocity.y + knockback.y);
@@ -344,9 +357,10 @@ public class Platformer_PlayerController : MonoBehaviour
         {
             damageable.Health = 0;
         }
-        else if (other.gameObject.tag =="Spear") 
+        else if (other.gameObject.tag == "Spear")
         {
             damageable.Health = 0;
         }
     }
+
 }

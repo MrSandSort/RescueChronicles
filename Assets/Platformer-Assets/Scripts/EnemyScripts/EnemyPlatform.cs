@@ -1,20 +1,30 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Build;
 using UnityEngine;
 using UnityEngine.UIElements;
 
 [RequireComponent(typeof(Rigidbody2D), typeof(TouchingGround), typeof(Damageable))]
-public class EnemyPlatform : MonoBehaviour
+public class EnemyPlatform : MonoBehaviour, IDataPersistence
 {
+    [SerializeField]
+    public string enemy_id;
+    [ContextMenu("Generate guid for Id")]
+    private void GenerateGuidId()
+    {
+        enemy_id = Guid.NewGuid().ToString();
+    }
+    private bool enemyDeafeated= false;
+
     public float walkSpeed = 3f;
     public float walkStopRate = 0.05f;
 
     public DetectArea attackArea;
     public DetectArea cliffDetectionArea;
 
-    Animator animator;
     Damageable damageable;
+    Animator animator;
     Rigidbody2D rb;
 
     public enum WalkableDirection { Right, Left }
@@ -86,10 +96,17 @@ public class EnemyPlatform : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         touchingDirection = GetComponent<TouchingGround>();
         animator = GetComponent<Animator>();
-        damageable = GetComponent<Damageable>();
+        damageable = rb.GetComponent<Damageable>();
+
+        if (string.IsNullOrEmpty(enemy_id))
+            GenerateGuidId();
+
+
     }
     private void Update()
     {
+        enemyDeafeated = !damageable.IsAlive;
+
         HasTarget = attackArea.detectColliders.Count > 0;
 
         if (AttackCooldown>0) 
@@ -141,27 +158,43 @@ public class EnemyPlatform : MonoBehaviour
     public void OnHit(int damage, Vector2 knockback)
     { 
         rb.velocity = new Vector2(knockback.x, rb.velocity.y + knockback.y);
-
     }
 
     public void OnCliffDetection() 
     {
-
         if (touchingDirection.IsGrounded) 
         {
             FlipDirection();
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D box)
+    private void OnCollisionEnter2D(Collision2D other)
     {
-        if (box.gameObject.tag=="Box")
+        if (other.gameObject.tag=="Box")
         {
             FlipDirection();
         }
 
-
     }
 
-   
+    public void LoadData(GameData data)
+    {
+        data.enemyDeafeated.TryGetValue(enemy_id, out enemyDeafeated);
+
+        if (enemyDeafeated)
+        {
+            gameObject.SetActive(false);
+        }
+    }
+
+    public void SaveData(ref GameData data)
+    { 
+
+        if (data.enemyDeafeated.ContainsKey(enemy_id))
+        {
+            data.enemyDeafeated.Remove(enemy_id);
+        }
+        data.enemyDeafeated.Add(enemy_id, enemyDeafeated);
+    }
+
 }

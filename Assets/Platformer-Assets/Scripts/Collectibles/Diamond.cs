@@ -2,14 +2,24 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.VFX;
 
-public class Diamond : MonoBehaviour
+public class Diamond : MonoBehaviour, IDataPersistence
 {
     [SerializeField]
+    private string diamond_Id;
+
+    [SerializeField]
     private int value;
-    private bool hasTriggered;
+    private bool hasTriggered= false;
 
     private DiamondManager diamondManager;
+
+    [ContextMenu("Generate guid for Id")]
+    private void GenerateGuidId() 
+    {
+        diamond_Id = Guid.NewGuid().ToString();
+    }
 
     private void Start()
     {
@@ -22,8 +32,28 @@ public class Diamond : MonoBehaviour
         {
             hasTriggered = true;
             diamondManager.ChangeDiamonds(value);
-            Destroy(gameObject);
+            gameObject.SetActive(false);
 
         }
+    }
+
+    public void LoadData(GameData data)
+    {
+        data.diamondsCollected.TryGetValue(diamond_Id, out hasTriggered);
+        
+        if(hasTriggered)
+        {
+            gameObject.SetActive(false);
+        }
+    }
+
+    public void SaveData(ref GameData data)
+    {
+        if (data.diamondsCollected.ContainsKey(diamond_Id)) 
+        {
+            data.diamondsCollected.Remove(diamond_Id);
+        }
+
+        data.diamondsCollected.Add(diamond_Id, hasTriggered);
     }
 }

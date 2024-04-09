@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 2988216955668959182}
   - component: {fileID: 3149693613306690437}
   - component: {fileID: 2872978636324747539}
-  - component: {fileID: -6044628870724737744}
-  m_Layer: 0
+  - component: {fileID: 3324254367600261573}
+  - component: {fileID: 8038190569156633021}
+  m_Layer: 10
   m_Name: Arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,13 +28,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6019704797204952891}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.0040724594, y: 0.009535867, z: -0.37824196, w: 0.92564875}
-  m_LocalPosition: {x: 0.552948, y: -0.37323093, z: -0.6207794}
+  m_LocalRotation: {x: 0.14330438, y: -0.054630224, z: 0.016018305, w: 0.9880399}
+  m_LocalPosition: {x: 0.62, y: -0.44, z: -0.6207794}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: -0.019, y: 1.188, z: -44.452}
+  m_LocalEulerAnglesHint: {x: 16.555, y: -6.19, z: 0.956}
 --- !u!212 &3149693613306690437
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -75,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2544481169733936263, guid: ebe61694d5f4ef24d9450e8ad788b7ac, type: 3}
+  m_Sprite: {fileID: 9202163618114184290, guid: c208a2d8a9996a74ab0eb50319b4dc6c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -94,7 +95,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6019704797204952891}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -109,11 +110,47 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 1
+  m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &-6044628870724737744
+--- !u!58 &3324254367600261573
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6019704797204952891}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0.85215527, y: -0.028945439}
+  m_Radius: 0.17933513
+--- !u!114 &8038190569156633021
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -122,9 +159,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 6019704797204952891}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a5b08fdcf96cf04d8ff3ac8c0a50c88, type: 3}
+  m_Script: {fileID: 11500000, guid: cdf99683c2139324abfb64c72eede52b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 2872978636324747539}
-  force: 10
-  arrowDamage: 0
+  attackDamage: 10
+  moveSpeed: {x: 8, y: 0}
+  knockback: {x: 1, y: 1}

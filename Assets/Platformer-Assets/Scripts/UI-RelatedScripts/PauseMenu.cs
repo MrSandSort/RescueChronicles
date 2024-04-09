@@ -52,4 +52,14 @@ public class PauseMenu : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
+    public void SaveGame() 
+    {
+        DataPersistenceManager.instance.SaveGame();
+    }
+
+    public void LoadGame() 
+    {
+        DataPersistenceManager.instance.LoadGame();
+    }
 }

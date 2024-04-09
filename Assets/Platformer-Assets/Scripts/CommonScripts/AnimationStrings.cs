@@ -18,4 +18,6 @@ internal class AnimationStrings
     internal static string lockVelocity="lockVelocity";
     internal static string hit="hit";
     internal static string attackCooldown="attackCooldown";
+    internal static string climb="climb";
+    internal static string rangeAttack="rangeAttack";
 }
