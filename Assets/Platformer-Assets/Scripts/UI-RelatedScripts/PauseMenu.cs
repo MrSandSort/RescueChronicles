@@ -7,11 +7,16 @@ public class PauseMenu : MonoBehaviour
 {
     public static bool isPaused = false;
     public GameObject PauseMenuPanel;
+    AudioManager audioManager;
     void Start()
     {
         Time.timeScale = 1f;
     }
 
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape)) 
@@ -31,6 +36,7 @@ public class PauseMenu : MonoBehaviour
 
     private void Stop()
     {
+        audioManager.SFX_Play(audioManager.SelectBtn);
         PauseMenuPanel.SetActive(true);
         Time.timeScale = 0f;
         isPaused = true;
@@ -38,6 +44,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Play()
     {
+        audioManager.SFX_Play(audioManager.SelectBtn);
         PauseMenuPanel.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false;
@@ -45,21 +52,22 @@ public class PauseMenu : MonoBehaviour
 
     public void MainMenuButton() 
     {
+        audioManager.SFX_Play(audioManager.SelectBtn);
         SceneManager.LoadScene(0);
     }
 
-    public void RestartGame() 
+    public void SaveGameButton() 
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
-
-    public void SaveGame() 
-    {
+        audioManager.SFX_Play(audioManager.SelectBtn);
         DataPersistenceManager.instance.SaveGame();
+        Play();
     }
 
-    public void LoadGame() 
+    public void LoadGameButton() 
     {
+        audioManager.SFX_Play(audioManager.SelectBtn);
         DataPersistenceManager.instance.LoadGame();
     }
+
+
 }

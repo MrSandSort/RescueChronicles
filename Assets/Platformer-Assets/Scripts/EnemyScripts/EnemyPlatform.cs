@@ -4,10 +4,13 @@ using System.Collections.Generic;
 using UnityEditor.Build;
 using UnityEngine;
 using UnityEngine.UIElements;
+using static UnityEngine.EventSystems.EventTrigger;
+using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(Rigidbody2D), typeof(TouchingGround), typeof(Damageable))]
 public class EnemyPlatform : MonoBehaviour, IDataPersistence
 {
+
     [SerializeField]
     public string enemy_id;
     [ContextMenu("Generate guid for Id")]
@@ -101,7 +104,6 @@ public class EnemyPlatform : MonoBehaviour, IDataPersistence
         if (string.IsNullOrEmpty(enemy_id))
             GenerateGuidId();
 
-
     }
     private void Update()
     {
@@ -115,6 +117,7 @@ public class EnemyPlatform : MonoBehaviour, IDataPersistence
         }
        
     }
+
     private void FixedUpdate()
     {
         if (touchingDirection.IsGrounded && touchingDirection.IsOnWall) 
@@ -189,12 +192,14 @@ public class EnemyPlatform : MonoBehaviour, IDataPersistence
 
     public void SaveData(ref GameData data)
     { 
-
         if (data.enemyDeafeated.ContainsKey(enemy_id))
         {
             data.enemyDeafeated.Remove(enemy_id);
         }
         data.enemyDeafeated.Add(enemy_id, enemyDeafeated);
+
     }
+
+
 
 }

@@ -6,6 +6,7 @@ using UnityEngine.VFX;
 
 public class Diamond : MonoBehaviour, IDataPersistence
 {
+    AudioManager audioManager;
     [SerializeField]
     private string diamond_Id;
 
@@ -20,6 +21,12 @@ public class Diamond : MonoBehaviour, IDataPersistence
     {
         diamond_Id = Guid.NewGuid().ToString();
     }
+      private void Awake()
+      {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+        if (string.IsNullOrEmpty(diamond_Id))
+            GenerateGuidId();
+      }
 
     private void Start()
     {
@@ -32,8 +39,8 @@ public class Diamond : MonoBehaviour, IDataPersistence
         {
             hasTriggered = true;
             diamondManager.ChangeDiamonds(value);
-            gameObject.SetActive(false);
-
+            audioManager.SFX_Play(audioManager.collectibles);
+            Destroy(gameObject);
         }
     }
 

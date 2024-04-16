@@ -21,6 +21,11 @@ public class MovingPlatform : MonoBehaviour, IDataPersistence
         targetPos = posB.position;
     }
 
+    private void Awake()
+    {
+        if (string.IsNullOrEmpty(platform_id))
+            GenerateGuidId();
+    }
     void Update()
     {
         if(Vector2.Distance(transform.position, posA.position) < .1f) targetPos= posB.position;
@@ -29,7 +34,6 @@ public class MovingPlatform : MonoBehaviour, IDataPersistence
         transform.position = Vector2.MoveTowards(transform.position, targetPos, Speed* Time.deltaTime);
 
     }
-
 
     [ContextMenu("Generate guid for Id")]
     private void GenerateGuidId()
@@ -63,13 +67,11 @@ public class MovingPlatform : MonoBehaviour, IDataPersistence
 
     public void SaveData(ref GameData data)
     {
-        if (data.platformPos.ContainsKey(platform_id))
-        {
-            data.platformPos[platform_id] = transform.position;
-        }
-        else
-        {
+            if (data.platformPos.ContainsKey(platform_id))
+            {
+                data.platformPos.Remove(platform_id);
+            }
             data.platformPos.Add(platform_id, transform.position);
-        }
     }
+
 }

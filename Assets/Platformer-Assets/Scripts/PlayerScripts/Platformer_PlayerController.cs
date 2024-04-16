@@ -50,6 +50,7 @@ public class Platformer_PlayerController : MonoBehaviour, IDataPersistence
             }
         }
     }
+    Checkpoint checkPoint;
 
     [SerializeField] float wallSlideSpeed = 0f;
     [SerializeField] private Transform wallCheck;
@@ -70,6 +71,7 @@ public class Platformer_PlayerController : MonoBehaviour, IDataPersistence
 
     TouchingGround touchingDirections;
     Damageable damageable;
+    AudioManager audioManager;
 
     Rigidbody2D rb;
 
@@ -159,12 +161,19 @@ public class Platformer_PlayerController : MonoBehaviour, IDataPersistence
         }
     }
 
+    private void Start()
+    {
+       
+    }
     private void Awake()
     {
+        checkPoint = GetComponent<Checkpoint>();
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         touchingDirections = GetComponent<TouchingGround>();
         damageable = GetComponent<Damageable>();
+
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
 
         wallJumpAngle.Normalize();
     }
@@ -208,10 +217,14 @@ public class Platformer_PlayerController : MonoBehaviour, IDataPersistence
 
     public void LoadData(GameData data ) 
     {
+        damageable.MaxHealth = data.MaxHealth;
+        damageable.Health = data.Health;
         this.transform.position = data.playerPos;
     }
     public void SaveData(ref GameData data) 
     {
+        data.Health = damageable.Health;
+        data.MaxHealth = damageable.MaxHealth;
         data.playerPos = this.transform.position;
     }
 
@@ -308,6 +321,7 @@ public class Platformer_PlayerController : MonoBehaviour, IDataPersistence
 
         {
             animator.SetTrigger(AnimationStrings.jump);
+            audioManager.SFX_Play(audioManager.jump);
 
             rb.velocity = new Vector2(rb.velocity.x, normalJumpImpulse);
 
@@ -320,6 +334,7 @@ public class Platformer_PlayerController : MonoBehaviour, IDataPersistence
         if (context.started)
         {
             animator.SetTrigger(AnimationStrings.attack);
+            audioManager.SFX_Play(audioManager.attack);
         }
     }
 
@@ -329,13 +344,14 @@ public class Platformer_PlayerController : MonoBehaviour, IDataPersistence
         if (context.started)
         {
             animator.SetTrigger(AnimationStrings.rangeAttack);
+            audioManager.SFX_Play(audioManager.attack);
         }
     }
 
     public void OnHit(int damage, Vector2 knockback)
     {
         rb.velocity = new Vector2(knockback.x, rb.velocity.y + knockback.y);
-
+        audioManager.SFX_Play(audioManager.damageTaken);
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -343,24 +359,23 @@ public class Platformer_PlayerController : MonoBehaviour, IDataPersistence
         if (other.gameObject.CompareTag("Sprinter"))
         {
             rb.velocity = new Vector2(rb.velocity.x, normalJumpImpulse * jumpImpulseMultiplier);
+            audioManager.SFX_Play(audioManager.jump);
+
 
         }
         else if (other.gameObject.tag == "FallingObject")
         {
-            damageable.Health = 0;
             Destroy(other.gameObject, 2f);
         }
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Spikes")
+        if (other.gameObject.tag == "Obstacle")
         {
             damageable.Health = 0;
+
         }
-        else if (other.gameObject.tag == "Spear")
-        {
-            damageable.Health = 0;
-        }
+        
     }
 
 }

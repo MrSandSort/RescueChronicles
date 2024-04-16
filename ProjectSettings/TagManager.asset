@@ -26,6 +26,10 @@ TagManager:
   - Spear
   - Stone
   - Ladder
+  - MovingPlatform
+  - GameCheck
+  - Transition
+  - Audio
   layers:
   - Default
   - TransparentFX

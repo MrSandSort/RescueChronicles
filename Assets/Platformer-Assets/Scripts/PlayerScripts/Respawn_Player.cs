@@ -8,37 +8,45 @@ public class Respawn_Player : MonoBehaviour
 
     public GameObject respawnPoint;
 
+    public float transitionDuration = 2f;
+
     Damageable damageable;
     
-    private int savedHealth;
     
     void Start()
     {
         damageable = player.GetComponent<Damageable>();
     }
 
-    void Update()
+    private void Update()
     {
-        
+      
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            SaveHealthBeforeRespawn();
-            player.transform.position = respawnPoint.transform.position;
-            RestoreHealthAfterRespawn();
+            StartCoroutine(RespawnCoroutine());
         }
     }
 
-    public void SaveHealthBeforeRespawn()
+    private IEnumerator RespawnCoroutine()
     {
-        savedHealth = damageable.Health; 
-    }
+        Vector3 startPosition = player.transform.position;
+        Vector3 targetPosition = respawnPoint.transform.position;
+        float elapsedTime = 0f;
 
-    public void RestoreHealthAfterRespawn()
-    {
-        damageable.Health = savedHealth;
+        while (elapsedTime < transitionDuration)
+        {
+            float t = Mathf.SmoothStep(0f, 1f, elapsedTime / transitionDuration);
+            player.transform.position = Vector3.Lerp(startPosition, targetPosition, t);
+
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        player.transform.position = targetPosition;
     }
 }
+

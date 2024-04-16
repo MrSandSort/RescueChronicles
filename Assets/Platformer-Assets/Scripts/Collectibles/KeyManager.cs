@@ -4,21 +4,18 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class KeyManager : MonoBehaviour
+public class KeyManager : MonoBehaviour, IDataPersistence
 {
     public static KeyManager instance;
     public int keys;
 
     [SerializeField] private TMP_Text keyDisplay;
-    [SerializeField] private GameObject woodenLog;
-
 
     private void Awake()
     {
         if (!instance)
         {
             instance = this;
-            woodenLog.SetActive(false);
         }
     }
 
@@ -30,17 +27,23 @@ public class KeyManager : MonoBehaviour
     public void AddKeys(int amount)
     {
         keys += amount;
+        WoodenLog.instance.UpdateLog();
+    }
 
-        if (WoodenLog.instance) 
+    public void LoadData(GameData data)
+    {
+        foreach (KeyValuePair<string, bool> pair in data.keysCollected)
         {
-            WoodenLog.instance.UpdateWoodenLog();
+            if (pair.Value)
+            {
+                keys++;
+            }
         }
-        else
-        {
-            Debug.Log("No woodenLog this time");
-        }
-       
+    }
 
-    } 
+    public void SaveData(ref GameData data)
+    {
+
+    }
 }
 

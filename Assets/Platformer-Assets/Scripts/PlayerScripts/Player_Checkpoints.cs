@@ -5,26 +5,26 @@ using UnityEngine;
 public class Player_Checkpoints : MonoBehaviour
 {
     private Respawn_Player respawn;
-
     private void Awake()
     {
         respawn = GameObject.FindGameObjectWithTag("Respawn").GetComponent<Respawn_Player>();
     }
     void Start()
     {
-        
+
     }
 
     void Update()
     {
-        
+
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (other.gameObject.CompareTag("Player")) 
+        if (collision.gameObject.CompareTag("Player"))
         {
             respawn.respawnPoint = this.gameObject;
         }
     }
 }
+   

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameOverMenu : MonoBehaviour
+public class GameOverMenu : MonoBehaviour, IDataPersistence
 {
     [SerializeField]
     private GameObject gameOverPanel;
@@ -31,7 +31,7 @@ public class GameOverMenu : MonoBehaviour
 
     private void Update()
     {
-        if (damageable.Health <= 0) 
+        if (!damageable.IsAlive) 
         {
             ShowGameOverScreen();
         }
@@ -41,14 +41,14 @@ public class GameOverMenu : MonoBehaviour
         gameOverPanel.SetActive(true);
         Time.timeScale = 0f; 
     }
-
-    public void RestartGame()
-    {
-        pauseMenu.RestartGame();
-    }
     public void ReturnToMainMenu()
     {
         pauseMenu.MainMenuButton();
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void QuitGame()
@@ -56,4 +56,18 @@ public class GameOverMenu : MonoBehaviour
         Application.Quit();
     }
 
+    public void LoadData(GameData data)
+    {
+        
+    }
+
+    public void SaveData(ref GameData data)
+    {
+        if (!damageable.IsAlive) 
+        {
+            data.Health = data.MaxHealth;
+        }
+        return;
+        
+    }
 }

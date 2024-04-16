@@ -9,12 +9,11 @@ public class Damageable : MonoBehaviour
     public UnityEvent<int, int> healthChange;
 
     Animator animator;
-    public GameObject[] ItemDrops;
 
+    [SerializeField] private GameObject itemDropPrefab;
 
     [SerializeField]
     public bool isInv = false;
-
     private float sinceHit = 0;
     public float invTimer = 0.25f;
 
@@ -126,11 +125,27 @@ public class Damageable : MonoBehaviour
             {
                 ItemDrop();
             }
-            return true;
+
         }
         return false;
     }
+    public void ItemDrop()
+    {
+        if (itemDropPrefab!= null) {
 
+            Instantiate(itemDropPrefab, transform.position, Quaternion.identity);
+        }
+        return;
+
+/*      if (ItemDrops.Length == 0)
+        {
+            return;
+        }
+        int randomIndex = Random.Range(0, ItemDrops.Length);
+
+        Instantiate(ItemDrops[randomIndex], transform.position + new Vector3(0, 1, 0), Quaternion.identity);*/
+
+    }
     public bool Heal(int healHealth) 
     {
         if (IsAlive && Health < MaxHealth ) 
@@ -152,17 +167,8 @@ public class Damageable : MonoBehaviour
         {
             Health = 0;
         }
-    }
-    public void ItemDrop()
-    {
-        if (ItemDrops.Length == 0) 
-        {
-            return;
-        }
-        int randomIndex = Random.Range(0, ItemDrops.Length);
-
-        Instantiate(ItemDrops[randomIndex], transform.position + new Vector3(0, 1, 0), Quaternion.identity);
 
     }
+  
 
 }
